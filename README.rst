@@ -39,17 +39,17 @@ How to create a new Python project from this boilerplate ?
 ----------------------------------------------------------
 
 Create the GitLab repository
-````````````````````````````
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Fork Boilerplate-Python
-~~~~~~~~~~~~~~~~~~~~~~~
+```````````````````````
 
 On GitLab fork Boilerplate-Python project by clicking the `Fork`_ button
 
 .. _Fork: https://gitlab.com/nicolas.maurice.valera/boilerplate-python/forks/new
 
 Manage project settings
-~~~~~~~~~~~~~~~~~~~~~~~
+```````````````````````
 
 On GitLab go to the forked project "General>Advanced Settings" and
 
@@ -57,10 +57,10 @@ On GitLab go to the forked project "General>Advanced Settings" and
 #. "Remove fork"
 
 Setup the project locally
-`````````````````````````
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Clone the project
-~~~~~~~~~~~~~~~~~
+`````````````````
 
 .. code-block:: sh
 
@@ -68,7 +68,7 @@ Clone the project
     $ cd new-package-name
 
 Add a remote for later update
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+`````````````````````````````
 
 .. code-block:: sh
 
@@ -76,7 +76,7 @@ Add a remote for later update
     $ git fetch boilerplate
 
 Rename the project
-~~~~~~~~~~~~~~~~~~
+``````````````````
 
 They are multiple scripts in the project that reference boilerplate-python, thus these scripts should be updated
 to be consistent with your package's name.
@@ -88,7 +88,7 @@ When modifying name you should be careful to always respect the case sensitivity
 - boilerplate-python -> new-package-name
 
 Update README.rst
-~~~~~~~~~~~~~~~~~
+`````````````````
 
 Once all previous steps completed you can erase this README.rst script content and start it over with the description of your new project.
 
