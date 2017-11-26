@@ -63,7 +63,6 @@ Clone the project
 `````````````````
 
 .. code-block:: sh
-
     $ git clone git@git.lab-apps.fr:<group>/new-package-name.git
     $ cd new-package-name
 
@@ -71,7 +70,6 @@ Add a remote for later update
 `````````````````````````````
 
 .. code-block:: sh
-
     $ git remote add boilerplate git@gitlab.com:nicolas.maurice.valera/boilerplate-python.git
     $ git fetch boilerplate
 
