@@ -34,7 +34,10 @@ setup(
         'dev': [
             'autoflake',
             'autopep8',
+            'coverage',
             'flake8',
+            'pytest>=3',
+            'tox',
         ],
     },
     zip_safe=False,
