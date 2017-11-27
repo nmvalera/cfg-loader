@@ -7,8 +7,6 @@ test:
   image: python:3.6
   before_script:
     - pip install -e .[dev]
-    - echo $TOXENV
-    - echo $CODECOV_TOKEN
   variables:
     TOXENV: py,codecov
   script:
@@ -23,9 +21,10 @@ test:
 test-lint:
   stage: test
   image: python:3.6
+  variables:
+    TOXENV: lint
   before_script:
     - pip install -e .[dev]
-    - export TOXENV=lint
   script:
     - tox
   tags:
@@ -34,9 +33,10 @@ test-lint:
 test-docs:
   stage: test
   image: python:3.6
+  variables:
+    TOXENV: docs
   before_script:
     - pip install -e .[dev]
-    - export TOXENV=docs
   script:
     - tox
   tags:
