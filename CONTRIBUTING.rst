@@ -26,13 +26,13 @@ Requirements
 
 #. Having the latest version of ``git`` installed locally
 #. Having Python 3.6 installed locally
-#  Having ``virtualenv`` installed locally
+#.  Having ``virtualenv`` installed locally
 
    To install ``virtualenv`` you can run the following command
 
    .. code-block:: sh
 
-       pip install virtualenv
+       $ pip install virtualenv
 
 #. Having ``docker`` and ``docker-compose`` installed locally
 #. Having ``pip`` environment variables correctly configured
@@ -84,6 +84,7 @@ The project
 
     .
     ├── boilerplate_package/     # Main package source scripts (where all functional python scripts are stored)
+    ├── docs/                    # Docs module containing all scripts required by sphinx to build the documentation
     ├── tests/                   # Tests folder where all test modules are stores
     ├── .coveragerc              # Configuration file for coverage
     ├── .gitignore               # List all files pattern excluded from git's tracking
@@ -95,7 +96,6 @@ The project
     ├── setup.py                 # File used to setup the package
     └── tox.ini                  # Configuration file of test suite (it runs test suite in both Python 3.5 and 3.6 environments)
 
-
 Coding
 ------
 
@@ -106,7 +106,7 @@ Please follow the next workflow when developing
 
 - Create a branch to identify the feature or issue you will work on (e.g.
   ``feature/my-feature`` or ``hotfix/2287``)
-- Using your favorite editor, make your changes, `committing as you go`_ and respecting the `AngularJS commit conventions`_
+- Using your favorite editor, make your changes, `committing as you go`_ and respecting the `AngularJS Commit Message Conventions`_
 - Follow `PEP8`_ and limit script's line length to **120 characters**. See `<testing-linting_>`_
 - Include tests that cover any code changes you make. See `<running-test_>`_ and `<running-coverage_>`_
 - Update ``setup.py`` script with all dependencies you introduce. See `<adding-dependency_>`_ for precisions
@@ -116,64 +116,8 @@ Please follow the next workflow when developing
 - Your branch will soon be merged ! :-)
 
 .. _committing as you go: http://dont-be-afraid-to-commit.readthedocs.io/en/latest/git/commandlinegit.html#commit-your-changes
-.. _AngularJS commit conventions: https://gist.github.com/stephenparish/9941e89d80e2bc58a153
+.. _AngularJS Commit Message Conventions: https://gist.github.com/stephenparish/9941e89d80e2bc58a153
 .. _PEP8: https://pep8.org/
-
-.. _updating-changelog:
-
-Precisions
-~~~~~~~~~~
-
-Updating changelog
-``````````````````
-
-Every implemented modifications on the project from a release to another should be documented in the changelog ``CHANGES.rst`` file.
-
-The format used for a release block is be the following
-
-.. code-block:: text
-
-    Version <NEW_VERSION>
-    ---------------------
-
-    Released on <NEW_VERSION_RELEASED_DATE>, codename <NEW_VERSION_CODENAME>.
-
-    Features
-
-    - Feature 1
-    - Feature 2
-    - Feature 3
-
-    Fixes
-
-    - Hotfix 1 (``#134``)
-    - Hotfix 2 (``#139``)
-
-    .. _#134: https://git.lab-apps.fr/packages/boilerplate-package/issues/134
-    .. _#139: https://git.lab-apps.fr/packages/boilerplate-package/issues/139
-
-Be careful to never touch the header line as well as the release's metadata sentence.
-
-.. code-block:: text
-
-    Version <NEW_VERSION>
-    ---------------------
-
-    Released on <NEW_VERSION_RELEASED_DATE>, codename <NEW_VERSION_CODENAME>.
-
-
-.. _adding-dependency:
-
-Adding a new dependency
-```````````````````````
-
-When adding a new package dependency it should be added in ``setup.py`` file in the ``install_requires`` list
-
-The format should be ``dependency==1.3.2``.
-
-When adding a dev dependency (e.g. a testing dependency) it should be added in
-    - ``setup.py`` file in the ``extra_requires`` ``dev`` list
-    - ``tox.ini`` file in the ``[testenv]`` ``deps``
 
 Testing
 ~~~~~~~
@@ -191,8 +135,8 @@ Run test suite in python3.6 environment (after activating project ``venv``) with
 
 .. _running-coverage:
 
-Running test coverage
-`````````````````````
+Running coverage
+````````````````
 
 Please ensure that all the lines of source code you are writing are covered in your test suite.
 To generate the coverage report, please run (after activating project ``venv``)
@@ -236,3 +180,73 @@ Run test suite in multiple distinct python environment with following command
 .. code-block:: sh
 
     $ tox
+
+.. _writing-docs:
+
+Writing documentation
+~~~~~~~~~~~~~~~~~~~~~
+
+Write clear and exhaustive docstrings in every functional scripts.
+
+This project uses sphinx to build documentations, it requires docs file to be written in ``.rst`` format.
+
+To build the documentation, please run
+
+.. code-block:: sh
+
+    $ sphinx-build -b html docs docs/_build
+
+Precisions
+~~~~~~~~~~
+
+.. _updating-changelog:
+
+Updating changelog
+``````````````````
+
+Every implemented modifications on the project from a release to another should be documented in the changelog ``CHANGES.rst`` file.
+
+The format used for a release block is be the following
+
+.. code-block:: text
+
+    Version <NEW_VERSION>
+    ---------------------
+
+    Released on <NEW_VERSION_RELEASED_DATE>, codename <NEW_VERSION_CODENAME>.
+
+    Features
+
+    - Feature 1
+    - Feature 2
+    - Feature 3
+
+    Fixes
+
+    - Hotfix 1 (``#134``)
+    - Hotfix 2 (``#139``)
+
+    .. _#134: https://git.lab-apps.fr/packages/boilerplate-package/issues/134
+    .. _#139: https://git.lab-apps.fr/packages/boilerplate-package/issues/139
+
+Be careful to never touch the header line as well as the release's metadata sentence.
+
+.. code-block:: text
+
+    Version <NEW_VERSION>
+    ---------------------
+
+    Released on <NEW_VERSION_RELEASED_DATE>, codename <NEW_VERSION_CODENAME>.
+
+.. _adding-dependency:
+
+Adding a new dependency
+```````````````````````
+
+When adding a new package dependency it should be added in ``setup.py`` file in the ``install_requires`` list
+
+The format should be ``dependency==1.3.2``.
+
+When adding a dev dependency (e.g. a testing dependency) it should be added in
+    - ``setup.py`` file in the ``extra_requires`` ``dev`` list
+    - ``tox.ini`` file in the ``[testenv]`` ``deps``
