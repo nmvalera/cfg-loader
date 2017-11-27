@@ -1,0 +1,55 @@
+stages:
+- test
+- docs
+
+test:
+  stage: test
+  image: python:3.6
+  before_script:
+    - pip install -e .[dev]
+    - export TOXENV=py,codecov
+    - export CODECOV_TOKEN=a6941021-a3bd-4c20-8686-3c6926c28307
+  script:
+    - echo $CODECOV_TOKEN
+    - tox
+  coverage: '/TOTAL.+ ([0-9]{1,3}%)/'
+  artifacts:
+    paths:
+      - htmlcov
+  tags:
+    - gitlab-org
+
+test-lint:
+  stage: test
+  image: python:3.6
+  before_script:
+    - pip install -e .[dev]
+    - export TOXENV=lint
+  script:
+    - tox
+  tags:
+    - gitlab-org
+
+test-docs:
+  stage: test
+  image: python:3.6
+  before_script:
+    - pip install -e .[dev]
+    - export TOXENV=docs
+  script:
+    - tox
+  tags:
+    - gitlab-org
+
+docs:
+  stage: docs
+  image: python:3.6
+  before_script:
+    - pip install -e .[dev]
+  script:
+    - sphinx-build -b html docs docs/_build/html
+  artifacts:
+    paths:
+      - docs/_build/html
+  tags:
+    - gitlab-org
