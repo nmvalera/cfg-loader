@@ -2,16 +2,18 @@ stages:
 - test
 - docs
 
-image: python:3.6
-before_script:
-  - pip install -e .[dev]
+
 
 test:
   stage: test
+  image: python:3.6
+  before_script:
+    - pip install -e .[dev]
   environment:
     TOXENV: py,codecov
     CODECOV_TOKEN: a6941021-a3bd-4c20-8686-3c6926c28307
   script:
+    - echo $CODECOV_TOKEN
     - tox
   coverage: '/TOTAL.+ ([0-9]{1,3}%)/'
   artifacts:
@@ -22,6 +24,9 @@ test:
 
 test-lint:
   stage: test
+  image: python:3.6
+  before_script:
+    - pip install -e .[dev]
   environment:
     TOXENV: lint
   script:
@@ -31,6 +36,9 @@ test-lint:
 
 test-docs:
   stage: test
+  image: python:3.6
+  before_script:
+    - pip install -e .[dev]
   environment:
     TOXENV: docs
   script:
@@ -40,6 +48,9 @@ test-docs:
 
 docs:
   stage: docs
+  image: python:3.6
+  before_script:
+    - pip install -e .[dev]
   script:
     - sphinx-build -b html docs docs/_build/html
   artifacts:
