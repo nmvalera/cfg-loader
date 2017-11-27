@@ -38,6 +38,7 @@ setup(
             'flake8',
             'pytest>=3',
             'tox',
+            'sphinx',
         ],
     },
     zip_safe=False,
