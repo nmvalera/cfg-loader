@@ -2,13 +2,11 @@ stages:
 - test
 - docs
 
-image: python:3.6
-before_script:
-  - pip install -e .[dev]
-
 test:
   stage: test
+  image: python:3.6
   before_script:
+    - pip install -e .[dev]
     - export TOXENV=py,codecov
   script:
     - tox
@@ -21,7 +19,9 @@ test:
 
 test-lint:
   stage: test
+  image: python:3.6
   before_script:
+    - pip install -e .[dev]
     - export TOXENV=lint
   script:
     - tox
@@ -30,7 +30,9 @@ test-lint:
 
 test-docs:
   stage: test
+  image: python:3.6
   before_script:
+    - pip install -e .[dev]
     - export TOXENV=docs
   script:
     - tox
@@ -39,6 +41,7 @@ test-docs:
 
 docs:
   stage: docs
+  image: python:3.6
   script:
     - sphinx-build -b html docs docs/_build/html
   artifacts:
