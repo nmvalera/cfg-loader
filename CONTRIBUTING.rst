@@ -194,7 +194,7 @@ To build the documentation, please run
 
 .. code-block:: sh
 
-    $ sphinx-build -b html docs docs/_build
+    $ sphinx-build -b html docs docs/_build/html
 
 Precisions
 ~~~~~~~~~~
