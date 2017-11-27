@@ -1,26 +1,42 @@
 stages:
 - test
+- docs
+
+image: python3.6
+before_script:
+  - pip install -e .[dev]
+tags:
+  - gitlab-org
 
 test:
   stage: test
-  image: python:3.6
   before_script:
-    - pip install -e .[dev]
+    - export TOXENV=py,codecov
   script:
     - tox
   coverage: '/TOTAL.+ ([0-9]{1,3}%)/'
-  tags:
-    - gitlab-org
+  artifacts:
+    paths:
+      - htmlcov
+
+test-lint:
+  stage: test
+  before_script:
+    - export TOXENV=lint
+  script:
+    - tox
+
+test-docs:
+  stage: test
+  before_script:
+    - export TOXENV=docs
+  script:
+    - tox
 
 docs:
-  stage: test
-  image: python:3.6
-  before_script:
-    - pip install -e .[dev]
+  stage: docs
   script:
     - sphinx-build -b html docs docs/_build/html
   artifacts:
     paths:
       - docs/_build/html
-  tags:
-    - gitlab-org
