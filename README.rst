@@ -13,6 +13,8 @@ This boilerplate is structured as every Python project should be and gathers res
 
 - creating development environment
 - testing
+- building docs
+- CI/CD scripts
 - etc.
 
 Requirements
