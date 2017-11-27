@@ -2,16 +2,13 @@ stages:
 - test
 - docs
 
-
-
 test:
   stage: test
   image: python:3.6
   before_script:
     - pip install -e .[dev]
-  environment:
-    TOXENV: py,codecov
-    CODECOV_TOKEN: a6941021-a3bd-4c20-8686-3c6926c28307
+    - export TOXENV=py,codecov
+    - export CODECOV_TOKEN=a6941021-a3bd-4c20-8686-3c6926c28307
   script:
     - echo $CODECOV_TOKEN
     - tox
@@ -27,8 +24,7 @@ test-lint:
   image: python:3.6
   before_script:
     - pip install -e .[dev]
-  environment:
-    TOXENV: lint
+    - export TOXENV=lint
   script:
     - tox
   tags:
@@ -39,8 +35,7 @@ test-docs:
   image: python:3.6
   before_script:
     - pip install -e .[dev]
-  environment:
-    TOXENV: docs
+    - export TOXENV=docs
   script:
     - tox
   tags:
