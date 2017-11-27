@@ -1,3 +1,9 @@
+.. image:: https://gitlab.com/nicolas.maurice.valera/boilerplate-python/badges/master/pipeline.svg
+    :target: https://gitlab.com/nicolas.maurice.valera/boilerplate-python/commits/master
+
+.. image:: https://gitlab.com/nicolas.maurice.valera/boilerplate-python/badges/master/coverage.svg
+    :target: https://gitlab.com/nicolas.maurice.valera/boilerplate-python/commits/master
+
 Boilerplate Python
 ==================
 
