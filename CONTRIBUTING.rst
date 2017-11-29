@@ -167,8 +167,8 @@ To automatically correct linting errors run
 
 .. code-block:: sh
 
-    $ autoflake8 -ir --remove-all-unused-imports --remove-unused-variables ./boilerplate_python
-    $ autoflake8 -ir --remove-all-unused-imports --remove-unused-variables ./tests
+    $ autoflake -ir --remove-all-unused-imports --remove-unused-variables ./boilerplate_python
+    $ autoflake -ir --remove-all-unused-imports --remove-unused-variables ./tests
     $ autopep8 -ir --aggressive --max-line-length=120  ./boilerplate_python
     $ autopep8 -ir --aggressive --max-line-length=120  ./tests
 
@@ -226,8 +226,8 @@ The format used for a release block is be the following
     - Hotfix 1 (``#134``)
     - Hotfix 2 (``#139``)
 
-    .. _#134: https://git.lab-apps.fr/packages/boilerplate-package/issues/134
-    .. _#139: https://git.lab-apps.fr/packages/boilerplate-package/issues/139
+    .. _#134: https://gitlab.com/nicolas.maurice.valera/boilerplate-python/issues/134
+    .. _#139: https://gitlab.com/nicolas.maurice.valera/boilerplate-python/issues/139
 
 Be careful to never touch the header line as well as the release's metadata sentence.
 
