@@ -67,13 +67,11 @@ First time setup
 
 .. _Clone: https://help.github.com/articles/fork-a-repo/#step-2-create-a-local-clone-of-your-fork
 
-- Create Python environment
+- Create development environment
 
   .. code-block:: sh
 
-      $ virtualenv venv -p python3.6
-      $ . venv/bin/activate
-      $ pip install -e .[dev]
+      $ make init
 
 Project organisation
 --------------------
@@ -83,14 +81,17 @@ The project
 .. code-block:: text
 
     .
-    ├── boilerplate_package/     # Main package source scripts (where all functional python scripts are stored)
+    ├── boilerplate_python/      # Main package source scripts (where all functional python scripts are stored)
     ├── docs/                    # Docs module containing all scripts required by sphinx to build the documentation
     ├── tests/                   # Tests folder where all test modules are stores
     ├── .coveragerc              # Configuration file for coverage
     ├── .gitignore               # List all files pattern excluded from git's tracking
+    ├── .gitlab-ci.yml           # GitLab CI script
+    ├── .travis.yml              # Travis CI script
     ├── AUTHORS                  # List all contributors to the package
     ├── CHANGES                  # Changelog listing every changes from a release to another
     ├── CONTRIBUTING.rst         # Indicate the guidelines that should be respected when contributing on this project
+    ├── Makefile                 # Script implement multiple commands to facilitate developments
     ├── README.rst               # README.md of your project
     ├── setup.cfg                # Configuration of extra commands that will be installed on package setup
     ├── setup.py                 # File used to setup the package
@@ -127,11 +128,11 @@ Testing
 Running tests
 `````````````
 
-Run test suite in python3.6 environment (after activating project ``venv``) with following command
+Run test suite in by running
 
 .. code-block:: sh
 
-    $ pytest
+    $ make test
 
 .. _running-coverage:
 
@@ -139,14 +140,11 @@ Running coverage
 ````````````````
 
 Please ensure that all the lines of source code you are writing are covered in your test suite.
-To generate the coverage report, please run (after activating project ``venv``)
+To generate the coverage report, please run
 
 .. code-block:: sh
 
-    $ coverage run -m pytest
-    $ coverage report
-    $ coverage html
-    $ xdg-open docs/htmlcov/index.html
+    $ make coverage
 
 Read more about `coverage <https://coverage.readthedocs.io>`_.
 
@@ -157,20 +155,17 @@ Running the full test suite with ``tox`` will combine the coverage reports from 
 Testing linting
 ```````````````
 
-To test if your project is compliant with linting rules run (after activating project ``venv``)
+To test if your project is compliant with linting rules run
 
 .. code-block:: sh
 
-    $ flake8
+    $ make test-lint
 
 To automatically correct linting errors run
 
 .. code-block:: sh
 
-    $ autoflake -ir --remove-all-unused-imports --remove-unused-variables ./boilerplate_python
-    $ autoflake -ir --remove-all-unused-imports --remove-unused-variables ./tests
-    $ autopep8 -ir --aggressive --max-line-length=120  ./boilerplate_python
-    $ autopep8 -ir --aggressive --max-line-length=120  ./tests
+    $ make lint
 
 Running full test suite
 ```````````````````````
@@ -179,7 +174,7 @@ Run test suite in multiple distinct python environment with following command
 
 .. code-block:: sh
 
-    $ tox
+    $ make tox
 
 .. _writing-docs:
 
@@ -194,7 +189,7 @@ To build the documentation, please run
 
 .. code-block:: sh
 
-    $ sphinx-build -b html docs docs/_build/html
+    $ make docs
 
 Precisions
 ~~~~~~~~~~
@@ -250,3 +245,48 @@ The format should be ``dependency==1.3.2``.
 When adding a dev dependency (e.g. a testing dependency) it should be added in
     - ``setup.py`` file in the ``extra_requires`` ``dev`` list
     - ``tox.ini`` file in the ``[testenv]`` ``deps``
+
+Makefile commands
+-----------------
+
+``Makefile`` implements multiple handful shell commands for development
+
+make init
+~~~~~~~~~
+
+Initialize development environment including
+    - venv creation
+    - package installation in dev mode
+
+make clean
+~~~~~~~~~~
+
+Clean the package project by removing some files such as ``.pyc``, ``.pyo``, ``*.egg-info``
+
+make test-lint
+~~~~~~~~~~~~~~
+
+Check if python scripts are compliant with `PEP8`_ rules
+
+make lint
+~~~~~~~~~
+
+Automatically correct `PEP8`_ mistakes contained in the project.
+
+make coverage
+~~~~~~~~~~~~~
+
+Run the test suite and computes test coverage.
+It creates an html report that is automatically open after the commands terminates
+
+make tox
+~~~~~~~~
+
+Run the test suites in multiple environments
+
+make docs
+~~~~~~~~~
+
+Build documentation from the ``docs`` folder using sphinx.
+It generates a build of the documentation in html format located in ``docs/_build/html``.
+
