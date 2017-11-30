@@ -1,31 +1,17 @@
 sudo: false
 language: python
-cache:
-  pip: true
 
-stages:
-  - test
-  - docs
+cache: pip
 
-jobs:
+matrix:
   include:
-  - stage: test
-    matrix:
-      include:
-        - python: 3.6
-          env:  TOXENV=py,codecov
-        - python: 3.6
-          env: TOXENV=lint
-        - python: 3.6
-          env: TOXENV=docs
-    install: pip install tox
-    script: tox
+    - python: 3.6
+      env: TOXENV=py,codecov
+    - python: 3.6
+      env: TOXENV=lint
+    - python: 3.6
+      env: TOXENV=docs
 
-  - stage: docs
-    python: 3.6
-    install:
-      - pip install -e .
-      - pip install sphinx
-    script: sphinx-build -b html docs docs/_build/html
+install: pip install tox
 
-
+script: tox
