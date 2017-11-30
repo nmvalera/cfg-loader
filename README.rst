@@ -51,14 +51,12 @@ Create the GitLab repository
 Fork Boilerplate-Python
 ```````````````````````
 
-On GitLab fork Boilerplate-Python project by clicking the `Fork`_ button
-
-.. _Fork: https://gitlab.com/nicolas.maurice.valera/boilerplate-python/forks/new
+Fork Boilerplate-Python project.
 
 Manage project settings
 ```````````````````````
 
-On GitLab go to the forked project "General>Advanced Settings" and
+Go to the forked project settings and
 
 #. "Rename repository" as you like (assuming here you renamed it ``new-package-name``) being careful to rename Project Name and Path the same
 #. "Remove fork"
