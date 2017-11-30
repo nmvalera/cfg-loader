@@ -7,9 +7,9 @@
 Boilerplate Python
 ==================
 
-This project is a Python boilerplate and is meant to be forked each time someone needs to create a new Python project.
+This project is a Python boilerplate and is meant to be forked when creating a new Python project.
 
-This boilerplate is structured as every Python project should be and gathers resources to make DevOps straightforward including
+This project is structured as respecting common Python project conventions and gathers scripts to make DevOps straightforward including
 
 - creating development environment
 - testing
@@ -23,8 +23,7 @@ Requirements
 Distribution
 ~~~~~~~~~~~~
 
-This boilerplate has been developed under on linux Ubuntu 16.04.
-It is highly recommended to use it on Unix system since some functions could be .
+It is highly recommended to use this project on Unix distribution.
 
 Git
 ~~~
