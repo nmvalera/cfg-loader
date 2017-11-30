@@ -1,8 +1,8 @@
-.. image:: https://gitlab.com/nicolas.maurice.valera/boilerplate-python/badges/master/pipeline.svg
-    :target: https://gitlab.com/nicolas.maurice.valera/boilerplate-python/commits/master
+.. image:: https://travis-ci.org/nicolas-maurice/boilerplate-python.svg?branch=master
+    :target: https://travis-ci.org/nicolas-maurice/boilerplate-python#
 
-.. image:: https://gitlab.com/nicolas.maurice.valera/boilerplate-python/badges/master/coverage.svg
-    :target: https://gitlab.com/nicolas.maurice.valera/boilerplate-python/commits/master
+.. image:: https://codecov.io/gh/nicolas-maurice/boilerplate-python/branch/master/graph/badge.svg
+    :target: https://codecov.io/gh/nicolas-maurice/boilerplate-python
 
 Boilerplate Python
 ==================
