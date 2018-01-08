@@ -1,4 +1,4 @@
-.. image:: https://travis-ci.org/nicolas-maurice/boilerplate-python.svg?branch=master
+.. image:: https://travis-ci.org/nmvalera/boilerplate-python.svg?branch=master
     :target: https://travis-ci.org/nmvalera/boilerplate-python#
 
 .. image:: https://codecov.io/gh/nicolas-maurice/boilerplate-python/branch/master/graph/badge.svg
