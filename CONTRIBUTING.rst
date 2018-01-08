@@ -4,9 +4,9 @@ Contributing guidelines
 Feature Requests, Bug Reports, and Feedback. . .
 ------------------------------------------------
 
-. . .should all be reported on the `GitLab Issue Tracker`_ .
+. . .should all be reported on the `GitHub Issue Tracker`_ .
 
-.. _`GitLab Issue Tracker`: https://gitlab.com/nicolas.maurice.valera/boilerplate-python/issues
+.. _`GitHub Issue Tracker`: https://github.com/nmvalera/boilerplate-python/issues
 
 Reporting issues
 ~~~~~~~~~~~~~~~~
@@ -60,7 +60,7 @@ First time setup
 
   .. code-block:: sh
 
-      $ git clone git@gitlab.com:nicolas.maurice.valera/boilerplate-python.git
+      $ git clone git@github.com:nmvalera/boilerplate-python.git
       $ cd boilerplate-python
 
 - If you are developing for the first time on the project, add your name to the ``AUTHORS.rst`` file
@@ -221,8 +221,8 @@ The format used for a release block is be the following
     - Hotfix 1 (``#134``)
     - Hotfix 2 (``#139``)
 
-    .. _#134: https://gitlab.com/nicolas.maurice.valera/boilerplate-python/issues/134
-    .. _#139: https://gitlab.com/nicolas.maurice.valera/boilerplate-python/issues/139
+    .. _#134: https://github.com/nmvalera/boilerplate-python/issues/134
+    .. _#139: https://github.com/nmvalera/boilerplate-python/issues/139
 
 Be careful to never touch the header line as well as the release's metadata sentence.
 
