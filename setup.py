@@ -25,7 +25,7 @@ def read(file_name):
 setup(
     name='Boilerplate-Python',
     version='0.0.0',
-    license=read('LICENSE.rst'),
+    license=read('LICENSE'),
     url='https://github.com/nmvalera/boilerplate-python',
     author='Nicolas Maurice',
     author_email='nicolas.maurice.valera@gmail.com',
