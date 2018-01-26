@@ -4,7 +4,7 @@
 
     Test import
 
-    :copyright: Copyright 2017 by Nicolas Maurice, see AUTHORS.rst for more details.
+    :copyright: Copyright 2017 by ConsenSys France.
     :license: BSD, see LICENSE for more details.
 """
 

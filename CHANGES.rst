@@ -8,4 +8,4 @@ Version 0.0.0
 
 Chore
 
-- Project: Initialize project and devOps files
+- Project: Initialize project

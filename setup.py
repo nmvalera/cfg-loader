@@ -4,9 +4,9 @@
 
     Boilerplate-Python is an empty Python project.
 
-    It is meant to be forked when starting a new Python project to inherit multiple DevOps functions.
+    It is meant to be forked when starting a new Python project to inherit structure.
 
-    :copyright: Copyright 2017 by Nicolas Maurice, see AUTHORS.rst for more details.
+    :copyright: Copyright 2017 by ConsenSys France.
     :license: BSD, see LICENSE for more details.
 """
 
@@ -26,9 +26,8 @@ setup(
     name='Boilerplate-Python',
     version='0.0.0',
     license=read('LICENSE'),
-    url='https://github.com/nmvalera/boilerplate-python',
-    author='Nicolas Maurice',
-    author_email='nicolas.maurice.valera@gmail.com',
+    url='https://gitlab.com/ConsenSys-Fr/boilerplates/boilerplate-python.git',
+    author='ConsenSys France',
     description='Boilerplate-Python is an empty Python project',
     packages=['boilerplate_python'],
     install_requires=[

@@ -77,7 +77,7 @@ Add a remote for later update
 
 .. code-block:: sh
 
-    $ git remote add boilerplate git@github.com:nmvalera/boilerplate-python.git
+    $ git remote add boilerplate git@gitlab.com:ConsenSys-Fr/boilerplates/boilerplate-python.git
     $ git fetch boilerplate
 
 Rename the project

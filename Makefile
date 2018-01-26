@@ -1,4 +1,4 @@
-# A sample Makefile for facilitating developement on Boilerplate-Python.
+# A sample Makefile for facilitating development on Boilerplate-Python.
 
 # Python version
 INTERPRETER=python3.6
@@ -18,7 +18,7 @@ AUTOPEP8=$(EXEC_PATH)autopep8
 PYTEST=$(EXEC_PATH)pytest
 TOX=$(EXEC_PATH)tox
 
-# General commmands
+# General commands
 .PHONY: all venv pip-install init develop
 
 # Docs commands

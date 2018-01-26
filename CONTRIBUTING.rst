@@ -6,7 +6,7 @@ Feature Requests, Bug Reports, and Feedback. . .
 
 . . .should all be reported on the `GitHub Issue Tracker`_ .
 
-.. _`GitHub Issue Tracker`: https://github.com/nmvalera/boilerplate-python/issues
+.. _`GitHub Issue Tracker`: https://gitlab.com/ConsenSys-Fr/boilerplates/boilerplate-python/issues
 
 Reporting issues
 ~~~~~~~~~~~~~~~~
@@ -56,20 +56,13 @@ Requirements
 First time setup
 ~~~~~~~~~~~~~~~~
 
-- `Clone`_ the project locally
+- Clone the project locally
+
+- Create development environment using Docker or Make
 
   .. code-block:: sh
 
-      $ git clone git@github.com:nmvalera/boilerplate-python.git
-      $ cd boilerplate-python
-
-- If you are developing for the first time on the project, add your name to the ``AUTHORS.rst`` file
-
-.. _Clone: https://help.github.com/articles/fork-a-repo/#step-2-create-a-local-clone-of-your-fork
-
-- Create development environment
-
-  .. code-block:: sh
+      $ docker-compose up
 
       $ make init
 
@@ -88,7 +81,6 @@ The project
     ├── .gitignore               # List all files pattern excluded from git's tracking
     ├── .gitlab-ci.yml           # GitLab CI script
     ├── .travis.yml              # Travis CI script
-    ├── AUTHORS                  # List all contributors to the package
     ├── CHANGES                  # Changelog listing every changes from a release to another
     ├── CONTRIBUTING.rst         # Indicate the guidelines that should be respected when contributing on this project
     ├── Makefile                 # Script implement multiple commands to facilitate developments
@@ -221,8 +213,8 @@ The format used for a release block is be the following
     - Hotfix 1 (``#134``)
     - Hotfix 2 (``#139``)
 
-    .. _#134: https://github.com/nmvalera/boilerplate-python/issues/134
-    .. _#139: https://github.com/nmvalera/boilerplate-python/issues/139
+    .. _#134: https://gitlab.com/ConsenSys-Fr/boilerplates/boilerplate-python/issues/134
+    .. _#139: https://gitlab.com/ConsenSys-Fr/boilerplates/boilerplate-python/issues/139
 
 Be careful to never touch the header line as well as the release's metadata sentence.
 

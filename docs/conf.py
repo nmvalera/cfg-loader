@@ -50,11 +50,11 @@ master_doc = 'docs/index'
 
 # General information about the project.
 PROJECT_NAME = 'Boilerplate-Package'
-AUTHOR = 'Nicolas Maurice'
+AUTHOR = 'ConsenSys France'
 
 project = PROJECT_NAME
 author = AUTHOR
-copyright = '{0}, Nicolas Maurice'.format(BUILD_DATE.year)
+copyright = '{0}, ConsenSys Paris'.format(BUILD_DATE.year)
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
