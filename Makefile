@@ -85,8 +85,8 @@ autoflake:
 	@$(AUTOFLAKE) -ir --remove-all-unused-imports --remove-unused-variables ./tests
 
 autopep8:
-	@$(AUTOPEP8) -ir --aggressive --max-line-length=180  ./boilerplate_python
-	@$(AUTOPEP8) -ir --aggressive --max-line-length=180  ./tests
+	@$(AUTOPEP8) -ir --aggressive --max-line-length=120  ./boilerplate_python
+	@$(AUTOPEP8) -ir --aggressive --max-line-length=120  ./tests
 
 auto-lint: autoflake autopep8
 
