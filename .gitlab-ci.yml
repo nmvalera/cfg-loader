@@ -6,7 +6,7 @@ test:
   stage: test
   image: python:3.6
   before_script:
-    - pip install -e .[dev]
+    - pip install tox
   variables:
     TOXENV: py,codecov
   script:
@@ -24,7 +24,7 @@ test-lint:
   variables:
     TOXENV: lint
   before_script:
-    - pip install -e .[dev]
+    - pip install tox
   script:
     - tox
   tags:
@@ -36,7 +36,7 @@ test-docs:
   variables:
     TOXENV: docs
   before_script:
-    - pip install -e .[dev]
+    - pip install tox
   script:
     - tox
   tags:
@@ -46,7 +46,7 @@ docs:
   stage: docs
   image: python:3.6
   before_script:
-    - pip install -e .[dev]
+    - pip install -e .[doc]
   script:
     - sphinx-build -b html docs docs/_build/html
   artifacts:

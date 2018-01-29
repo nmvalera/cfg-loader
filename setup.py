@@ -42,6 +42,9 @@ setup(
             'tox',
             'sphinx',
         ],
+        'doc': [
+            'sphinx',
+        ],
     },
     zip_safe=False,
     platforms='any',
