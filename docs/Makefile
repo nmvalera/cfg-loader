@@ -17,7 +17,7 @@ SPHINXBUILD=$(SPHINX_EXEC_PATH)sphinx-build
 .PHONY: venv develop init clean-pyc clean-build clean-html clean build-html html
 
 clean:
-	@rm -rfv $(BUILDDIR)
+	@rm -rf $(BUILDDIR)
 
 build-html:
 	@echo "Building docs..."
