@@ -4,7 +4,9 @@ source=boilerplate_python
 
 [report]
 precision=2
-fail_under=100
+exclude_lines =
+    pragma: no cover
+    raise NotImplementedError
 
 [html]
 directory=htmlcov
