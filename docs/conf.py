@@ -1,5 +1,13 @@
-# Boilerplate-Package documentation build configuration file
-#
+"""
+    docs.conf.py
+    ~~~~~~~~~~~~
+
+    Boilerplate-Python documentation build configuration file
+
+    :copyright: Copyright 2017 by ConsenSys France.
+    :license: BSD, see :ref:`license` for more details.
+"""
+
 # This file is execfile()d with the current directory set to its
 # containing dir.
 #
@@ -13,6 +21,7 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
+
 import os
 import sys
 from datetime import datetime
@@ -49,12 +58,12 @@ source_suffix = '.rst'
 master_doc = 'docs/index'
 
 # General information about the project.
-PROJECT_NAME = 'Boilerplate-Package'
+PROJECT_NAME = 'Boilerplate-Python'
 AUTHOR = 'ConsenSys France'
 
 project = PROJECT_NAME
 author = AUTHOR
-copyright = '{0}, ConsenSys Paris'.format(BUILD_DATE.year)
+copyright = '{0}, ConsenSys France'.format(BUILD_DATE.year)
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the

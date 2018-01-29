@@ -6,7 +6,7 @@ License
 Authors
 -------
 
-ConsenSys France
+.. include:: ../../AUTHORS
 
 General License Definitions
 ---------------------------
