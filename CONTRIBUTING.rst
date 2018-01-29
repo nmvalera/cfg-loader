@@ -26,7 +26,7 @@ Requirements
 
 #. Having the latest version of ``git`` installed locally
 #. Having Python 3.6 installed locally
-#.  Having ``virtualenv`` installed locally
+#. Having ``virtualenv`` installed locally
 
    To install ``virtualenv`` you can run the following command
 
@@ -61,8 +61,6 @@ First time setup
 - Create development environment using Docker or Make
 
   .. code-block:: sh
-
-      $ docker-compose up
 
       $ make init
 
