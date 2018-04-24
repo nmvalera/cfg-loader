@@ -6,7 +6,7 @@ Feature Requests, Bug Reports, and Feedback. . .
 
 . . .should all be reported on the `GitHub Issue Tracker`_ .
 
-.. _`GitHub Issue Tracker`: https://gitlab.com/ConsenSys-Fr/boilerplates/boilerplate-python/issues
+.. _`GitHub Issue Tracker`: https://gitlab.com/ConsenSys-Fr/boilerplates/boilerplate-package/issues
 
 Reporting issues
 ~~~~~~~~~~~~~~~~
@@ -211,8 +211,8 @@ The format used for a release block is be the following
     - Hotfix 1 (``#134``)
     - Hotfix 2 (``#139``)
 
-    .. _#134: https://gitlab.com/ConsenSys-Fr/boilerplates/boilerplate-python/issues/134
-    .. _#139: https://gitlab.com/ConsenSys-Fr/boilerplates/boilerplate-python/issues/139
+    .. _#134: https://gitlab.com/ConsenSys-Fr/boilerplates/boilerplate-package/issues/134
+    .. _#139: https://gitlab.com/ConsenSys-Fr/boilerplates/boilerplate-package/issues/139
 
 Be careful to never touch the header line as well as the release's metadata sentence.
 
@@ -279,4 +279,3 @@ make docs
 
 Build documentation from the ``docs`` folder using sphinx.
 It generates a build of the documentation in html format located in ``docs/_build/html``.
-

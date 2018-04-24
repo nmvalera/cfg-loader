@@ -26,7 +26,7 @@ setup(
     name='Boilerplate-Python',
     version='0.0.0',
     license=read('LICENSE'),
-    url='https://gitlab.com/ConsenSys-Fr/boilerplates/boilerplate-python.git',
+    url='https://gitlab.com/ConsenSys-Fr/boilerplates/boilerplate-package',
     author='ConsenSys France',
     description='Boilerplate-Python is an empty Python project',
     packages=['boilerplate_python'],
