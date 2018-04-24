@@ -16,7 +16,7 @@ test:
     paths:
       - htmlcov
   tags:
-    - gitlab-org
+    - private-ci
 
 test-lint:
   stage: test
@@ -28,7 +28,7 @@ test-lint:
   script:
     - tox
   tags:
-    - gitlab-org
+    - private-ci
 
 test-docs:
   stage: test
@@ -40,7 +40,7 @@ test-docs:
   script:
     - tox
   tags:
-    - gitlab-org
+    - private-ci
 
 docs:
   stage: docs
@@ -53,4 +53,4 @@ docs:
     paths:
       - docs/_build/html
   tags:
-    - gitlab-org
+    - private-ci
