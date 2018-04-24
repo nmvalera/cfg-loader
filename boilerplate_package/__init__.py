@@ -1,6 +1,6 @@
 """
-    boilerplate_python
-    ~~~~~~~~~~~~~~~~~~
+    boilerplate_package
+    ===================
 
     An empty python project
 

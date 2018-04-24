@@ -1,6 +1,6 @@
-Welcome to Boilerplate-Python
-=============================
+Welcome to Boilerplate-Package
+==============================
 
-Welcome to Boilerplate-Python's documentation.
+Welcome to Boilerplate-Package's documentation.
 
 .. include:: contents.rst.inc

@@ -2,7 +2,7 @@
     tests
     ~~~~~
 
-    Test suite for Boilerplate-Python project
+    Test suite for Boilerplate-Package project
 
     :copyright: Copyright 2017 by ConsenSys France.
     :license: BSD, see :ref:`license` for more details.

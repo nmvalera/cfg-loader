@@ -1,6 +1,6 @@
 FROM python:3.6-alpine
 
-RUN mkdir -p /usr/src/app/boilerplate_python
+RUN mkdir -p /usr/src/app/boilerplate_package
 WORKDIR /usr/src/app
 
 # Install the project in editable mode

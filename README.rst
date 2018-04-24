@@ -1,8 +1,8 @@
-.. image:: https://travis-ci.org/nmvalera/boilerplate-python.svg?branch=master
-    :target: https://travis-ci.org/nmvalera/boilerplate-python#
+.. image:: https://travis-ci.org/nmvalera/boilerplate-package.svg?branch=master
+    :target: https://travis-ci.org/nmvalera/boilerplate-package#
 
-.. image:: https://codecov.io/gh/nicolas-maurice/boilerplate-python/branch/master/graph/badge.svg
-    :target: https://codecov.io/gh/nmvalera/boilerplate-python
+.. image:: https://codecov.io/gh/nicolas-maurice/boilerplate-package/branch/master/graph/badge.svg
+    :target: https://codecov.io/gh/nmvalera/boilerplate-package
 
 Boilerplate Python
 ==================
@@ -48,10 +48,10 @@ How to create a new Python project from this boilerplate ?
 Create the GitHub repository
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Fork Boilerplate-Python
+Fork Boilerplate-Package
 ```````````````````````
 
-Fork Boilerplate-Python project.
+Fork Boilerplate-Package project.
 
 Manage project settings
 ```````````````````````
@@ -83,14 +83,14 @@ Add a remote for later update
 Rename the project
 ``````````````````
 
-They are multiple scripts in the project that reference boilerplate-python, thus these scripts should be updated
+They are multiple scripts in the project that reference boilerplate-package, thus these scripts should be updated
 to be consistent with your project's name.
 
 When modifying name you should be careful to always respect the case sensitivity.
 
-- Boilerplate-Python -> New-Project-Name
-- boilerplate_python -> new_project_name
-- boilerplate-python -> new-project-name
+- Boilerplate-Package -> New-Project-Name
+- boilerplate_package -> new_project_name
+- boilerplate-package -> new-project-name
 
 Update README.rst
 `````````````````

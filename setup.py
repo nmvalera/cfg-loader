@@ -1,8 +1,8 @@
 """
-    Boilerplate-Python
-    ~~~~~~~~~~~~~~~~~~
+    Boilerplate-Package
+    ~~~~~~~~~~~~~~~~~~~
 
-    Boilerplate-Python is an empty Python project.
+    Boilerplate-Package is an empty Python project.
 
     It is meant to be forked when starting a new Python project to inherit structure.
 
@@ -23,13 +23,13 @@ def read(file_name):
 
 
 setup(
-    name='Boilerplate-Python',
+    name='Boilerplate-Package',
     version='0.0.0',
     license=read('LICENSE'),
     url='https://gitlab.com/ConsenSys-Fr/boilerplates/boilerplate-package',
     author='ConsenSys France',
-    description='Boilerplate-Python is an empty Python project',
-    packages=['boilerplate_python'],
+    description='Boilerplate-Package is an empty Python project',
+    packages=['boilerplate_package'],
     install_requires=[
     ],
     extras_require={

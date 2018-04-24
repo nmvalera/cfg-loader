@@ -8,7 +8,7 @@
     :license: BSD, see LICENSE for more details.
 """
 
-import boilerplate_python
+import boilerplate_package
 
 
 def _test_version(module):
@@ -20,5 +20,5 @@ def _test_all(module):
 
 
 def test_import():
-    _test_version(boilerplate_python)
-    _test_all(boilerplate_python)
+    _test_version(boilerplate_package)
+    _test_all(boilerplate_package)

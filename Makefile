@@ -1,4 +1,4 @@
-# A sample Makefile for facilitating development on Boilerplate-Python.
+# A sample Makefile for facilitating development on Boilerplate-Package.
 
 # Python version
 INTERPRETER=python3.6
@@ -81,11 +81,11 @@ flake8:
 test-lint: develop flake8
 
 autoflake:
-	@$(AUTOFLAKE) -ir --remove-all-unused-imports --remove-unused-variables ./boilerplate_python
+	@$(AUTOFLAKE) -ir --remove-all-unused-imports --remove-unused-variables ./boilerplate_package
 	@$(AUTOFLAKE) -ir --remove-all-unused-imports --remove-unused-variables ./tests
 
 autopep8:
-	@$(AUTOPEP8) -ir --aggressive --max-line-length=120  ./boilerplate_python
+	@$(AUTOPEP8) -ir --aggressive --max-line-length=120  ./boilerplate_package
 	@$(AUTOPEP8) -ir --aggressive --max-line-length=120  ./tests
 
 auto-lint: autoflake autopep8

@@ -1,6 +1,6 @@
 [run]
 branch=True
-source=boilerplate_python
+source=boilerplate_package
 
 [report]
 precision=2
@@ -10,4 +10,4 @@ exclude_lines =
 
 [html]
 directory=htmlcov
-title=Boilerplate-Python coverage Report
+title=Boilerplate-Package coverage Report

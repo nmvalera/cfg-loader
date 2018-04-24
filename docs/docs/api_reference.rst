@@ -4,4 +4,4 @@
 API Reference
 *************
 
-.. module:: boilerplate_python
+.. module:: boilerplate_package
