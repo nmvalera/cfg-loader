@@ -26,7 +26,7 @@ setup(
     name='Boilerplate-Package',
     version='0.0.0',
     license=read('LICENSE'),
-    url='https://gitlab.com/ConsenSys-Fr/boilerplates/boilerplate-package',
+    url='https://gitlab.com/ConsenSys-Fr/sandbox/config-loader',
     author='ConsenSys France',
     description='Boilerplate-Package is an empty Python project',
     packages=['boilerplate_package'],
