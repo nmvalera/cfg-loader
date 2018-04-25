@@ -4,4 +4,4 @@
 API Reference
 *************
 
-.. module:: boilerplate_package
+.. module:: config_loader

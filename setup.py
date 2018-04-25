@@ -1,8 +1,8 @@
 """
-    Boilerplate-Package
-    ~~~~~~~~~~~~~~~~~~~
+    Config-Loader
+    ~~~~~~~~~~~~~
 
-    Boilerplate-Package is an empty Python project.
+    Config-Loader is an empty Python project.
 
     It is meant to be forked when starting a new Python project to inherit structure.
 
@@ -23,13 +23,13 @@ def read(file_name):
 
 
 setup(
-    name='Boilerplate-Package',
+    name='Config-Loader',
     version='0.0.0',
     license=read('LICENSE'),
     url='https://gitlab.com/ConsenSys-Fr/sandbox/config-loader',
     author='ConsenSys France',
-    description='Boilerplate-Package is an empty Python project',
-    packages=['boilerplate_package'],
+    description='Config-Loader is an empty Python project',
+    packages=['config_loader'],
     install_requires=[
     ],
     extras_require={

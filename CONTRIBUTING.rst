@@ -72,7 +72,7 @@ The project
 .. code-block:: text
 
     .
-    ├── boilerplate_package/      # Main package source scripts (where all functional python scripts are stored)
+    ├── config_loader/      # Main package source scripts (where all functional python scripts are stored)
     ├── docs/                    # Docs module containing all scripts required by sphinx to build the documentation
     ├── tests/                   # Tests folder where all test modules are stores
     ├── .coveragerc              # Configuration file for coverage

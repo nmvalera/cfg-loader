@@ -1,8 +1,8 @@
-.. image:: https://travis-ci.org/nmvalera/boilerplate-package.svg?branch=master
-    :target: https://travis-ci.org/nmvalera/boilerplate-package#
+.. image:: https://travis-ci.org/nmvalera/config-loader.svg?branch=master
+    :target: https://travis-ci.org/nmvalera/config-loader#
 
-.. image:: https://codecov.io/gh/nicolas-maurice/boilerplate-package/branch/master/graph/badge.svg
-    :target: https://codecov.io/gh/nmvalera/boilerplate-package
+.. image:: https://codecov.io/gh/nicolas-maurice/config-loader/branch/master/graph/badge.svg
+    :target: https://codecov.io/gh/nmvalera/config-loader
 
 Boilerplate Package
 ===================
@@ -46,10 +46,10 @@ How to create a new Python project from this boilerplate ?
 Create the GitHub repository
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Fork Boilerplate-Package
+Fork Config-Loader
 ```````````````````````
 
-Fork Boilerplate-Package project.
+Fork Config-Loader project.
 
 Manage project settings
 ```````````````````````
@@ -81,14 +81,14 @@ Add a remote for later update
 Rename the project
 ``````````````````
 
-They are multiple scripts in the project that reference boilerplate-package, thus these scripts should be updated
+They are multiple scripts in the project that reference config-loader, thus these scripts should be updated
 to be consistent with your project's name.
 
 When modifying name you should be careful to always respect the case sensitivity.
 
-- Boilerplate-Package -> new-Package-Name
-- boilerplate_package -> new_package_name
-- boilerplate-package -> new-package-name
+- Config-Loader -> new-Package-Name
+- config_loader -> new_package_name
+- config-loader -> new-package-name
 
 Update README.rst
 `````````````````

@@ -1,6 +1,6 @@
-Welcome to Boilerplate-Package
-==============================
+Welcome to Config-Loader
+========================
 
-Welcome to Boilerplate-Package's documentation.
+Welcome to Config-Loader's documentation.
 
 .. include:: contents.rst.inc

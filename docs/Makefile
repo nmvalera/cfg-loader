@@ -1,10 +1,10 @@
-# A sample Makefile for facilitating docs building on Boilerplate-Package.
+# A sample Makefile for facilitating docs building on Config-Loader.
 
 # Docs directory
 
 # Sphinx info
 SPHINXOPTS=
-SPHINXPROJ=Boilerplate-Package
+SPHINXPROJ=Config-Loader
 ROOTDIR=..
 SOURCEDIR=.
 DOCS_DIR=docs
