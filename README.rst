@@ -75,7 +75,7 @@ Add a remote for later update
 
 .. code-block:: sh
 
-    $ git remote add boilerplate git@gitlab.com:ConsenSys-Fr/boilerplates/boilerplate-package.git
+    $ git remote add boilerplate git@gitlab.com:ConsenSys-Fr/sandbox/config-loader.git
     $ git fetch boilerplate
 
 Rename the project
