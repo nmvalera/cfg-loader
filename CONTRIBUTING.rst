@@ -78,9 +78,10 @@ The project
     ├── .coveragerc              # Configuration file for coverage
     ├── .gitignore               # List all files pattern excluded from git's tracking
     ├── .gitlab-ci.yml           # GitLab CI script
-    ├── .travis.yml              # Travis CI script
+    ├── AUTHORS                  # List of authors of the project
     ├── CHANGES                  # Changelog listing every changes from a release to another
     ├── CONTRIBUTING.rst         # Indicate the guidelines that should be respected when contributing on this project
+    ├── LICENSE                  # License of the project
     ├── Makefile                 # Script implement multiple commands to facilitate developments
     ├── README.rst               # README.md of your project
     ├── setup.cfg                # Configuration of extra commands that will be installed on package setup
@@ -103,7 +104,6 @@ Please follow the next workflow when developing
 - Update ``setup.py`` script with all dependencies you introduce. See `<adding-dependency_>`_ for precisions
 - Write clear and exhaustive docstrings. Write docs to precise how to use the functionality you implement. See `<writing-docs_>`_
 - Update changelog with the modifications you proceed to. See `<updating-changelog_>`_
-- Push your branch and submit a merge request with ``dev`` branch as target
 - Your branch will soon be merged ! :-)
 
 .. _committing as you go: http://dont-be-afraid-to-commit.readthedocs.io/en/latest/git/commandlinegit.html#commit-your-changes

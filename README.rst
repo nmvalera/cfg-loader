@@ -4,12 +4,10 @@
 .. image:: https://codecov.io/gh/nicolas-maurice/boilerplate-package/branch/master/graph/badge.svg
     :target: https://codecov.io/gh/nmvalera/boilerplate-package
 
-Boilerplate Python
-==================
+Boilerplate Package
+===================
 
-This project is a Python boilerplate and is meant to be forked when creating a new Python project.
-
-This project is structured as respecting common Python project conventions and gathers scripts to make DevOps straightforward including
+This project is a Python boilerplate and is meant to be cloned when starting a new Python package.
 
 - creating development environment
 - testing
@@ -58,7 +56,7 @@ Manage project settings
 
 Go to the forked project settings and
 
-#. "Rename repository" as you like (assuming here you renamed it ``new-project-name``) being careful to rename Project Name and Path the same
+#. "Rename repository" as you like (assuming here you renamed it ``new-package-name``) being careful to rename Project Name and Path the same
 #. "Remove fork"
 
 Setup the project locally
@@ -69,8 +67,8 @@ Clone the project
 
 .. code-block:: sh
 
-    $ git clone git@github.com:<group>/new-project-name.git
-    $ cd new-project-name
+    $ git clone git@github.com:<group>/new-package-name.git
+    $ cd new-package-name
 
 Add a remote for later update
 `````````````````````````````
@@ -88,9 +86,9 @@ to be consistent with your project's name.
 
 When modifying name you should be careful to always respect the case sensitivity.
 
-- Boilerplate-Package -> New-Project-Name
-- boilerplate_package -> new_project_name
-- boilerplate-package -> new-project-name
+- Boilerplate-Package -> new-Package-Name
+- boilerplate_package -> new_package_name
+- boilerplate-package -> new-package-name
 
 Update README.rst
 `````````````````
