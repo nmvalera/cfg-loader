@@ -1,16 +1,15 @@
 """
-    config_loader.schema
-    ~~~~~~~~~~~~~~~~~~~~
+    config_loader.schema.base
+    ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    Implement marshmallow schema loading
+    Implement base marshmallow schema to deserialize configuration data
 
     :copyright: Copyright 2017 by ConsenSys France.
     :license: BSD, see :ref:`license` for more details.
 """
 
+from config_loader.interpolator import SubstitutionTemplate, Interpolator
 from marshmallow import Schema, post_load
-
-from .interpolator import SubstitutionTemplate, Interpolator
 
 
 class InterpolatingSchema(Schema):
