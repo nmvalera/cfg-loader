@@ -25,6 +25,10 @@ class LoadingError(ConfigLoaderError):
     """Error raised when loading the configuration file"""
 
 
+class ValidationError(ConfigLoaderError):
+    """Error raised when marshmallow raise a validation error at deserialization"""
+
+
 class UnsetRequiredSubstitution(LoadingError):
     """Error raised when a substitution environment variable is required but unset"""
 

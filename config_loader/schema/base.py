@@ -8,6 +8,8 @@
     :license: BSD, see :ref:`license` for more details.
 """
 
+import marshmallow
+from config_loader.exceptions import ValidationError
 from config_loader.fields import UnwrapNested
 from config_loader.interpolator import SubstitutionTemplate, Interpolator
 from marshmallow import Schema, post_load
@@ -37,7 +39,10 @@ class InterpolatingSchema(Schema):
             # substitute environment variables
             data = self.interpolator.interpolate_recursive(data)
 
-        return super().load(data, many, partial)
+        try:
+            return super().load(data, many, partial)
+        except marshmallow.exceptions.ValidationError as e:
+            raise ValidationError(e.normalized_messages())
 
 
 class ExtraFieldsSchema(Schema):

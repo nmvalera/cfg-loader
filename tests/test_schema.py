@@ -9,10 +9,10 @@
 """
 
 import pytest
+from config_loader.exceptions import ValidationError
 from config_loader.fields import UnwrapNested
 from config_loader.schema import ConfigSchema
 from marshmallow import fields
-from marshmallow.exceptions import ValidationError
 
 
 class NestedConfigSchemaTest(ConfigSchema):
