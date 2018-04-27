@@ -57,7 +57,7 @@ class YamlBaseConfigLoader(BaseConfigLoader):
         if config_file is None:
             raise ConfigFileMissingError("""
                     No configuration file specified.
-                    Please provide a configuration file path or 
+                    Please provide a configuration valid file path or 
                     set the environ variable '{var}'
                 """.format(var=self.config_file_env_var))
 
