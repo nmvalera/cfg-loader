@@ -9,19 +9,20 @@
 """
 
 import pytest
-from config_loader.schema import ConfigSchema, FlaskConfigSchema
+from config_loader.fields import UnwrapNested
+from config_loader.schema import ConfigSchema
 from marshmallow import fields
 from marshmallow.exceptions import ValidationError
 
 
-class NestedConfigSchema(ConfigSchema):
+class NestedConfigSchemaTest(ConfigSchema):
     field = fields.Int()
     many = fields.List(fields.Str())
 
 
 class ConfigSchemaTest(ConfigSchema):
     field = fields.Str()
-    nested = fields.Nested(NestedConfigSchema)
+    nested = fields.Nested(NestedConfigSchemaTest)
 
 
 @pytest.fixture(scope='module')
@@ -127,18 +128,19 @@ def test_interpolating_config_schema_loading(interpolating_config_schema_loader)
     }
 
 
-class NestedFlaskConfigSchema(ConfigSchema):
-    nested = fields.Nested(NestedConfigSchema)
+class NestedUnwrapConfigSchemaTest(ConfigSchema):
+    nested = UnwrapNested(NestedConfigSchemaTest)
 
 
-class FlaskConfigSchemaTest(FlaskConfigSchema):
+class UnwrapConfigSchemaTest(ConfigSchema):
     field = fields.Str()
-    nested = fields.Nested(NestedFlaskConfigSchema)
+    nested = UnwrapNested(NestedUnwrapConfigSchemaTest)
+    regular_nested = fields.Nested(NestedConfigSchemaTest)
 
 
 @pytest.fixture(scope='module')
 def flask_config_schema_loader():
-    yield FlaskConfigSchemaTest(substitution_mapping={'VARIABLE': 'substitution', 'VARIABLE_INT': '24'})
+    yield UnwrapConfigSchemaTest(substitution_mapping={'VARIABLE': 'substitution', 'VARIABLE_INT': '24'})
 
 
 def test_flask_config_schema_loading(flask_config_schema_loader):
@@ -157,6 +159,12 @@ def test_flask_config_schema_loading(flask_config_schema_loader):
                 'element',
             ],
         },
+        'regular_nested': {
+            'field': 33,
+            'many': [
+                '${UNSET_VARIABLE-default}',
+            ],
+        }
     }
 
     assert flask_config_schema_loader.load(raw_config) == {
@@ -167,5 +175,11 @@ def test_flask_config_schema_loading(flask_config_schema_loader):
         ],
         'extra': [
             'element'
-        ]
+        ],
+        'regular_nested': {
+            'field': 33,
+            'many': [
+                'default',
+            ],
+        }
     }

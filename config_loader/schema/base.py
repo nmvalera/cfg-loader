@@ -8,6 +8,7 @@
     :license: BSD, see :ref:`license` for more details.
 """
 
+from config_loader.fields import UnwrapNested
 from config_loader.interpolator import SubstitutionTemplate, Interpolator
 from marshmallow import Schema, post_load
 
@@ -58,5 +59,22 @@ class ExtraFieldsSchema(Schema):
         return data
 
 
-class ConfigSchema(InterpolatingSchema, ExtraFieldsSchema):
+class UnwrapNestedSchema(Schema):
+    """Base config schema to load flask application configuration
+
+    Flask expects settings to be listed in a
+    """
+
+    @post_load
+    def unwrap_nested_fields(self, data):
+        unwrap_nested = {}
+        for field, value in self.fields.items():
+            if isinstance(value, UnwrapNested):
+                unwrap_nested.update(data.pop(field))
+        data.update(unwrap_nested)
+
+        return data
+
+
+class ConfigSchema(InterpolatingSchema, ExtraFieldsSchema, UnwrapNestedSchema):
     """Base configuration schema"""

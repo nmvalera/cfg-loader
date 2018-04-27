@@ -9,9 +9,7 @@
 """
 
 from .base import ConfigSchema
-from .flask import FlaskConfigSchema
 
 __all__ = [
     'ConfigSchema',
-    'FlaskConfigSchema',
 ]

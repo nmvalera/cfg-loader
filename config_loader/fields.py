@@ -52,3 +52,10 @@ class Path(fields.String):
         super().__init__(*args, **kwargs)
         # Insert validation into self.validators so that multiple errors can be
         self.validators.append(PathValidator(error=self.error_messages['invalid_path']))
+
+
+class UnwrapNested(fields.Nested):
+    """Nested fields class that will unwrapped at deserialization
+
+    Useful when used with UnwrapSchema
+    """
