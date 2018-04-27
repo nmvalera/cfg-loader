@@ -23,17 +23,19 @@ class BaseConfigLoader:
     :param schema: Marshmallow schema used to deserialize configuration input data
     """
 
-    def __init__(self, schema):
-        self.schema = schema
+    def __init__(self, config_schema, substitution_mapping=None):
+        self.substitution_mapping = substitution_mapping or {}
+        self.config_schema = config_schema
 
-    def load(self, data):
+    def load(self, data, substitution_mapping=None):
         """Load configuration from an object
 
         :param input: Data to load configuration from (must be deserializable by schema)
         :type input: object
         """
+        substitution_mapping = substitution_mapping or self.substitution_mapping
 
-        return self.schema.load(data)
+        return self.config_schema(substitution_mapping=substitution_mapping).load(data)
 
 
 class YamlBaseConfigLoader(BaseConfigLoader):
@@ -68,7 +70,7 @@ class YamlBaseConfigLoader(BaseConfigLoader):
 
         return config_file
 
-    def load(self, config_file=None):
+    def load(self, config_file=None, substitution_mapping=None):
         """Load configuration from .yaml file
 
         :param config_file: Path to the .yaml configuration file
@@ -85,4 +87,4 @@ class YamlBaseConfigLoader(BaseConfigLoader):
         # Parse yaml file
         data = parse_yaml_file(config_file)
 
-        return super().load(data)
+        return super().load(data, substitution_mapping)
