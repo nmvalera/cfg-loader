@@ -9,7 +9,7 @@
 """
 
 import pytest
-from config_loader.schema import ConfigSchema
+from config_loader.schema import ConfigSchema, FlaskConfigSchema
 from marshmallow import fields
 from marshmallow.exceptions import ValidationError
 
@@ -25,16 +25,16 @@ class ConfigSchemaTest(ConfigSchema):
 
 
 @pytest.fixture(scope='module')
-def basic_config_loader():
+def basic_config_schema_loader():
     yield ConfigSchemaTest()
 
 
 @pytest.fixture(scope='module')
-def interpolating_config_loader():
+def interpolating_config_schema_loader():
     yield ConfigSchemaTest(substitution_mapping={'VARIABLE': 'substitution', 'VARIABLE_INT': '24'})
 
 
-def _test_invalid_basic_config_loading(config_loader):
+def _test_invalid_basic_config_schema_loading(schema_loader):
     invalid_raw_config = {
         'field': 2,
         'extra': 'extra_value',
@@ -46,10 +46,10 @@ def _test_invalid_basic_config_loading(config_loader):
         }
     }
     with pytest.raises(ValidationError):
-        config_loader.load(invalid_raw_config)
+        schema_loader.load(invalid_raw_config)
 
 
-def _test_valid_basic_config_loading(config_loader):
+def _test_valid_basic_config_schema_loading(schema_loader):
     valid_raw_config = {
         'field': 'value',
         'extra': 'extra_value',
@@ -66,7 +66,7 @@ def _test_valid_basic_config_loading(config_loader):
             }
         }
     }
-    assert config_loader.load(valid_raw_config) == {
+    assert schema_loader.load(valid_raw_config) == {
         'field': 'value',
         'extra': 'extra_value',
         'nested': {
@@ -84,13 +84,13 @@ def _test_valid_basic_config_loading(config_loader):
     }
 
 
-def test_basic_config_loading(basic_config_loader, interpolating_config_loader):
-    for config_loader in [basic_config_loader, interpolating_config_loader]:
-        _test_invalid_basic_config_loading(config_loader)
-        _test_valid_basic_config_loading(config_loader)
+def test_basic_config_schema_loading(basic_config_schema_loader, interpolating_config_schema_loader):
+    for config_loader in [basic_config_schema_loader, interpolating_config_schema_loader]:
+        _test_invalid_basic_config_schema_loading(config_loader)
+        _test_valid_basic_config_schema_loading(config_loader)
 
 
-def test_interpolating_config_loading(interpolating_config_loader):
+def test_interpolating_config_schema_loading(interpolating_config_schema_loader):
     raw_config = {
         'field': 'value',
         'extra': '${VARIABLE?err}',
@@ -108,8 +108,7 @@ def test_interpolating_config_loading(interpolating_config_loader):
             ]
         },
     }
-
-    assert interpolating_config_loader.load(raw_config) == {
+    assert interpolating_config_schema_loader.load(raw_config) == {
         'field': 'value',
         'extra': 'substitution',
         'nested': {
@@ -125,4 +124,48 @@ def test_interpolating_config_loading(interpolating_config_loader):
                 },
             ],
         },
+    }
+
+
+class NestedFlaskConfigSchema(ConfigSchema):
+    nested = fields.Nested(NestedConfigSchema)
+
+
+class FlaskConfigSchemaTest(FlaskConfigSchema):
+    field = fields.Str()
+    nested = fields.Nested(NestedFlaskConfigSchema)
+
+
+@pytest.fixture(scope='module')
+def flask_config_schema_loader():
+    yield FlaskConfigSchemaTest(substitution_mapping={'VARIABLE': 'substitution', 'VARIABLE_INT': '24'})
+
+
+def test_flask_config_schema_loading(flask_config_schema_loader):
+    raw_config = {
+        'field': 'value',
+        'extra': '${VARIABLE?err}',
+        'nested': {
+            'nested': {
+                'field': '${VARIABLE_INT}',
+                'many': [
+                    '${UNSET_VARIABLE-default}',
+                    'element',
+                ],
+            },
+            'extra': [
+                'element',
+            ],
+        },
+    }
+
+    assert flask_config_schema_loader.load(raw_config) == {
+        'field': 24,
+        'many': [
+            'default',
+            'element',
+        ],
+        'extra': [
+            'element'
+        ]
     }
