@@ -31,13 +31,15 @@ setup(
     description='Config-Loader is an empty Python project',
     packages=['config_loader'],
     install_requires=[
+        'marshmallow==3.0.0b8',
+        'PyYAML>=3.12',
     ],
     extras_require={
         'dev': [
+            'flake8',
             'autoflake',
             'autopep8',
             'coverage',
-            'flake8',
             'pytest>=3',
             'tox',
             'sphinx',
