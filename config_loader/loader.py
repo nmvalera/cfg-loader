@@ -83,6 +83,6 @@ class YamlBaseConfigLoader(BaseConfigLoader):
         self.check_file(config_file)
 
         # Parse yaml file
-        input = parse_yaml_file(config_file)
+        data = parse_yaml_file(config_file)
 
-        return super().load(input)
+        return super().load(data)
