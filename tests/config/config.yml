@@ -1,13 +1,1 @@
-app:
-  base:
-    APP_NAME: Test-App
-    DEBUG: false
-    EXTRA1: extra1
-  EXTRA2: ${EXTRA2-extra2}
-
-middlewares:
-  request_id:
-    REQUEST_ID_HEADER: X-Request-ID
-
-logging:
-  LOGGING_CONFIG_PATH: ${LOGGING_FILE_PATH}
+setting: 'setting_value'
