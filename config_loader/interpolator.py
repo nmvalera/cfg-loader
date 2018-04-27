@@ -166,7 +166,7 @@ class Interpolator:
     >>> interpolator = Interpolator(substitution_mapping={'VARIABLE': 'value'})
     >>> interpolator.interpolate('${VARIABLE} in complex string')
     'value in complex string'
-    >>> interpolator.interpolate({'key1': '${VARIABLE}', 'key2': ['element', '${EXTRA-default}']})
+    >>> interpolator.interpolate_recursive({'key1': '${VARIABLE}', 'key2': ['element', '${EXTRA-default}']})
     {'key1': 'value', 'key2': ['element', 'default']}
     """
 
