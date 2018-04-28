@@ -38,7 +38,7 @@ class BaseConfigLoader:
         return self.config_schema(substitution_mapping=substitution_mapping).load(data)
 
 
-class YamlBaseConfigLoader(BaseConfigLoader):
+class YamlConfigLoader(BaseConfigLoader):
     """Config loader that reads config from .yaml file
 
     :param config_file_env_var: Environment variable to read config file path from if not provided when loading

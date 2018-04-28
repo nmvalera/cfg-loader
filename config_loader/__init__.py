@@ -8,7 +8,7 @@
     :license: BSD, see :ref:`license` for more details.
 """
 
-from .loader import BaseConfigLoader, YamlBaseConfigLoader
+from .loader import BaseConfigLoader, YamlConfigLoader
 from .schema import ConfigSchema
 
 __version__ = '0.0.0'
@@ -16,5 +16,5 @@ __version__ = '0.0.0'
 __all__ = [
     'ConfigSchema',
     'BaseConfigLoader',
-    'YamlBaseConfigLoader',
+    'YamlConfigLoader',
 ]
