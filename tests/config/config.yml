@@ -1,1 +1,6 @@
-setting: 'setting_value'
+base:
+  name: App-Name
+  path: /home/user/${PATH}
+
+security:
+  secret: $SECRET
