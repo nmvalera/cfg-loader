@@ -10,7 +10,8 @@ Config-Loader
 Config loader is a library that allows to easily load configuration settings.
 It uses `marshmallow`_ to deserialize input data into a target format configuration data.
 
-Main features are
+Main features
+~~~~~~~~~~~~~
 
 - input data validation and automatic processing using `marshmallow`_
 - substitution of environment variables in input data (following `docker compose variable substitution syntax`_)
@@ -32,7 +33,7 @@ A simple example
     >>> from config_loader import ConfigSchema, BaseConfigLoader
     >>> from marshmallow import fields
 
-    # Declare configuration schema
+    # Declare your configuration schema
     >>> class MyConfigSchema(ConfigSchema):
     ...     setting1 = fields.Str()
     ...     setting2 = fields.Int(required=True)
