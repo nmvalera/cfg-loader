@@ -99,7 +99,6 @@ class ConfigSchema(InterpolatingSchema, ExtraFieldsSchema, UnwrapNestedSchema):
     - :class:`UnwrapNestedSchema`
 
     Example
-    ```````
 
     >>> from config_loader import ConfigSchema, BaseConfigLoader
     >>> from marshmallow import fields
