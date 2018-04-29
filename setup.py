@@ -29,7 +29,7 @@ setup(
     url='https://gitlab.com/ConsenSys-Fr/sandbox/config-loader',
     author='ConsenSys France',
     description='Config-Loader is an empty Python project',
-    packages=['config_loader'],
+    packages=find_packages(),
     install_requires=[
         'marshmallow==3.0.0b8',
         'PyYAML>=3.12',
