@@ -26,7 +26,8 @@ class SubstitutionTemplate(string.Template):
     It implements specification from docker-compose environ variable substitution
     (c.f. https://docs.docker.com/compose/compose-file/#variable-substitution)
 
-    Examples with basic substitution:
+    Examples with basic substitution
+
     >>> template = SubstitutionTemplate('${VARIABLE}')
     >>> template.substitute({'VARIABLE': 'value'})
     'value'
@@ -37,7 +38,8 @@ class SubstitutionTemplate(string.Template):
     ...
     KeyError: 'VARIABLE'
 
-    Examples with substitution if variable is empty or unset (separator: ":-"):
+    Examples with substitution if variable is empty or unset (separator: ":-")
+
     >>> template = SubstitutionTemplate('${VARIABLE:-default}')
     >>> template.substitute({'VARIABLE': 'value'})
     'value'
@@ -47,6 +49,7 @@ class SubstitutionTemplate(string.Template):
     'default'
 
     Examples with substitution if variable is empty (separator: "-"):
+
     >>> template = SubstitutionTemplate('${VARIABLE-default}')
     >>> template.substitute({'VARIABLE': 'value'})
     'value'
@@ -55,7 +58,8 @@ class SubstitutionTemplate(string.Template):
     >>> template.substitute({})
     'default'
 
-    Examples with error raised if variable is unset (separator: "?"):
+    Examples with error raised if variable is unset (separator: "?")
+
     >>> template = SubstitutionTemplate('${VARIABLE?err}')
     >>> template.substitute({'VARIABLE': 'value'})
     'value'
@@ -66,7 +70,8 @@ class SubstitutionTemplate(string.Template):
     ...
     config_loader.exceptions.UnsetRequiredSubstitution: err
 
-    Examples with error raised if variable is empty or  unset (separator: ":?"):
+    Examples with error raised if variable is empty or  unset (separator: ":?")
+
     >>> template = SubstitutionTemplate('${VARIABLE:?err}')
     >>> template.substitute({'VARIABLE': 'value'})
     'value'
@@ -163,9 +168,12 @@ class Interpolator:
     :type substitution_mapping: dict
 
     Example
+
     >>> interpolator = Interpolator(substitution_mapping={'VARIABLE': 'value'})
+
     >>> interpolator.interpolate('${VARIABLE} in complex string')
     'value in complex string'
+
     >>> interpolator.interpolate_recursive({'key1': '${VARIABLE}', 'key2': ['element', '${EXTRA-default}']})
     {'key1': 'value', 'key2': ['element', 'default']}
     """

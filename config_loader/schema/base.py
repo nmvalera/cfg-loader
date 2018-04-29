@@ -16,7 +16,7 @@ from marshmallow import Schema, post_load
 
 
 class InterpolatingSchema(Schema):
-    """Base schema class that interpolate environ variables in input data
+    """Schema class that interpolate environ variables from input data
 
     It implements environment variable substitution following specification from docker-compose
     (c.f. https://docs.docker.com/compose/compose-file/#variable-substitution)
@@ -35,6 +35,17 @@ class InterpolatingSchema(Schema):
         super().__init__(*args, **kwargs)
 
     def load(self, data, many=None, partial=None):
+        """Deserialize a data structure to an object defined by this Schema’s fields
+
+        :param data: Data object to load from
+        :type data: dict
+        :param many: Whether to deserialize ``data`` as a collection
+        :type many: bool
+        :param partial: whether to ignore missing fields
+        :type partial: bool | tuple
+        :returns: Deserialized data
+        :type return: dict
+        """
         if self.substitution_mapping:
             # substitute environment variables
             data = self.interpolator.interpolate_recursive(data)
@@ -46,7 +57,7 @@ class InterpolatingSchema(Schema):
 
 
 class ExtraFieldsSchema(Schema):
-    """Base schema class that preserves fields in input data that were listed as a schema fields"""
+    """Schema class that preserves fields provided in input data but that were omitted in schema fields"""
 
     @post_load(pass_original=True)
     def add_extra_fields(self, data, original_data):
@@ -65,10 +76,7 @@ class ExtraFieldsSchema(Schema):
 
 
 class UnwrapNestedSchema(Schema):
-    """Base config schema to load flask application configuration
-
-    Flask expects settings to be listed in a
-    """
+    """Schema class that can unwrap nested fields"""
 
     @post_load
     def unwrap_nested_fields(self, data):
@@ -82,4 +90,39 @@ class UnwrapNestedSchema(Schema):
 
 
 class ConfigSchema(InterpolatingSchema, ExtraFieldsSchema, UnwrapNestedSchema):
-    """Base configuration schema"""
+    """Main schema class for declaring a configuration schema
+
+    It inherits every feature from
+
+    - :class:`InterpolatingSchema`
+    - :class:`ExtraFieldsSchema`
+    - :class:`UnwrapNestedSchema`
+
+    Example
+    ```````
+
+    >>> from config_loader import ConfigSchema, BaseConfigLoader
+    >>> from marshmallow import fields
+
+    >>> class MyConfigSchema(ConfigSchema):
+    ...     setting1 = fields.Str()
+    ...     setting2 = fields.Int(required=True)
+    ...     setting3 = fields.Float(missing=13.2)
+
+    >>> substitution_mapping = {'VARIABLE': 'substitution'}
+    >>> my_config_loader = BaseConfigLoader(MyConfigSchema,
+    ...                                     substitution_mapping)
+
+    >>> schema = MyConfigSchema(substitution_mapping=substitution_mapping)
+    >>> config = schema.load({
+    ...    'setting1': '${VARIABLE}',
+    ...    'setting2': '${UNSET_VARIABLE:-1}',
+    ... })
+
+    >>> config == {
+    ...     'setting1': 'substitution',
+    ...     'setting2': 1,
+    ...     'setting3': 13.2,
+    ... }
+    True
+    """
