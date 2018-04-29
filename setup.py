@@ -12,7 +12,7 @@
 
 import os
 
-from setuptools import setup
+from setuptools import setup, find_packages
 
 
 def read(file_name):
@@ -24,7 +24,7 @@ def read(file_name):
 
 setup(
     name='Config-Loader',
-    version='0.0.0',
+    version='0.1.0-dev',
     license=read('LICENSE'),
     url='https://gitlab.com/ConsenSys-Fr/sandbox/config-loader',
     author='ConsenSys France',
