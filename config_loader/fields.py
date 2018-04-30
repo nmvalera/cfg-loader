@@ -59,10 +59,10 @@ class UnwrapNested(fields.Nested):
 
     Useful when used with UnwrapSchema
 
-    :param prefix: Prefix to add to every key when unwrapping a field
+    :param prefix: Optional prefix to add to every key when unwrapping a field
     :type prefix: str
     """
 
-    def __init__(self, *args, prefix=None, **kwargs):
-        self.prefix = prefix or ''
+    def __init__(self, *args, prefix='', **kwargs):
+        self.prefix = prefix
         super().__init__(*args, **kwargs)
