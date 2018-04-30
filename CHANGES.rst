@@ -6,6 +6,8 @@ Here you can see the full list of changes between each releases of Config-Loader
 Version 0.1.0
 -------------
 
+Unreleased
+
 Features
 
 - input data validation and automatic processing using `marshmallow`_
@@ -15,9 +17,10 @@ Features
 .. _`marshmallow`: https://github.com/marshmallow-code/marshmallow
 .. _`docker compose variable substitution syntax`: https://docs.docker.com/compose/compose-file/#variable-substitution
 
-
 Version 0.0.0
 -------------
+
+Unreleased
 
 Chore
 
