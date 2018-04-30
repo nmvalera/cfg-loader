@@ -134,7 +134,7 @@ class NestedUnwrapConfigSchemaTest(ConfigSchema):
 
 class UnwrapConfigSchemaTest(ConfigSchema):
     field = fields.Str()
-    nested = UnwrapNested(NestedUnwrapConfigSchemaTest)
+    unwrap_nested = UnwrapNested(NestedUnwrapConfigSchemaTest, prefix='unwrapped_')
     regular_nested = fields.Nested(NestedConfigSchemaTest)
 
 
@@ -147,7 +147,7 @@ def test_flask_config_schema_loading(flask_config_schema_loader):
     raw_config = {
         'field': 'value',
         'extra': '${VARIABLE?err}',
-        'nested': {
+        'unwrap_nested': {
             'nested': {
                 'field': '${VARIABLE_INT}',
                 'many': [
@@ -168,12 +168,14 @@ def test_flask_config_schema_loading(flask_config_schema_loader):
     }
 
     assert flask_config_schema_loader.load(raw_config) == {
-        'field': 24,
-        'many': [
+        'field': 'value',
+        'extra': 'substitution',
+        'unwrapped_field': 24,
+        'unwrapped_many': [
             'default',
             'element',
         ],
-        'extra': [
+        'unwrapped_extra': [
             'element'
         ],
         'regular_nested': {

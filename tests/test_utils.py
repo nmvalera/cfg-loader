@@ -10,7 +10,7 @@
 
 import pytest
 
-from config_loader.utils import parse_yaml, parse_yaml_file
+from config_loader.utils import parse_yaml, parse_yaml_file, add_prefix
 
 
 def test_parse_yaml():
@@ -30,3 +30,18 @@ def test_parse_yaml_file(config_path):
         parse_yaml_file('unknown')
 
     assert parse_yaml_file(config_path)
+
+
+def test_add_prefix():
+    raw_dict = {
+        'key1': 'value1',
+        'key2': {
+            'key3': 'value3'
+        },
+    }
+    assert add_prefix(raw_dict, 'prefix_') == {
+        'prefix_key1': 'value1',
+        'prefix_key2': {
+            'key3': 'value3'
+        },
+    }
