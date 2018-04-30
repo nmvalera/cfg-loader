@@ -24,7 +24,7 @@ def read(file_name):
 
 setup(
     name='Config-Loader',
-    version='0.1.0',
+    version='0.2.0-dev',
     license=read('LICENSE'),
     url='https://gitlab.com/ConsenSys-Fr/sandbox/config-loader',
     author='ConsenSys France',
