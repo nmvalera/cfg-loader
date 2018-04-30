@@ -13,6 +13,7 @@ from config_loader.exceptions import ValidationError
 from config_loader.fields import UnwrapNested
 from config_loader.interpolator import SubstitutionTemplate, Interpolator
 from marshmallow import Schema, post_load
+from ..utils import add_prefix
 
 
 class InterpolatingSchema(Schema):
@@ -83,7 +84,7 @@ class UnwrapNestedSchema(Schema):
         unwrap_nested = {}
         for field, value in self.fields.items():
             if isinstance(value, UnwrapNested):
-                unwrap_nested.update(data.pop(field))
+                unwrap_nested.update(add_prefix(data.pop(field), value.prefix))
         data.update(unwrap_nested)
 
         return data

@@ -58,4 +58,11 @@ class UnwrapNested(fields.Nested):
     """Nested fields class that will unwrapped at deserialization
 
     Useful when used with UnwrapSchema
+
+    :param prefix: Prefix to add to every key when unwrapping a field
+    :type prefix: str
     """
+
+    def __init__(self, *args, prefix=None, **kwargs):
+        self.prefix = prefix or ''
+        super().__init__(*args, **kwargs)
