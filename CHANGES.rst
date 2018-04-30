@@ -3,6 +3,11 @@ Changelog
 
 Here you can see the full list of changes between each releases of Config-Loader.
 
+Version 0.1.1
+-------------
+
+Unreleased
+
 Version 0.1.0
 -------------
 
