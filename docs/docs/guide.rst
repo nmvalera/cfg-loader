@@ -262,7 +262,7 @@ Example
 
     >>> class MyConfigSchema(ConfigSchema):
     ...     regular_nested = fields.Nested(MyNestedConfigSchema)
-    ...     unwrap_nested = UnwrapNested(MyNestedConfigSchema)
+    ...     unwrap_nested = UnwrapNested(MyNestedConfigSchema, prefix='my_prefix_')
 
     >>> my_config_loader = BaseConfigLoader(MyConfigSchema)
 
@@ -282,8 +282,8 @@ Example
     ...         'setting1': 'regular_value',
     ...         'setting2': 5,
     ...     },
-    ...     'setting1': 'unwrap_value',
-    ...     'setting2': 4,
+    ...     'my_prefix_setting1': 'unwrap_value',
+    ...     'my_prefix_setting2': 4,
     ... }
     True
 

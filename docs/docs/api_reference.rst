@@ -55,6 +55,9 @@ Fields
 .. autoclass:: Path
     :members:
 
+.. autoclass:: UnwrapNested
+    :members:
+
 Exceptions
 ==========
 
