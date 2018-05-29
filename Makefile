@@ -93,12 +93,12 @@ auto-lint: autoflake autopep8
 lint: develop auto-lint
 
 pytest:
-	@$(PYTEST)
+	@$(PYTEST) --doctest-modules --doctest-glob='*.rst'
 
 test: develop pytest
 
 run-coverage:
-	@$(COVERAGE) run -m pytest
+	@$(COVERAGE) run -m pytest --doctest-modules --doctest-glob='*.rst'
 	@$(COVERAGE) report
 	@$(COVERAGE) html
 
