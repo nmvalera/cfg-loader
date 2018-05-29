@@ -24,14 +24,17 @@ def read(file_name):
 
 setup(
     name='Config-Loader',
-    version='0.2.0-dev',
+    version='0.1.0-dev',
     license=read('LICENSE'),
-    url='https://gitlab.com/ConsenSys-Fr/sandbox/config-loader',
-    author='ConsenSys France',
-    description='Config-Loader is an empty Python project',
+    url='https://github.com/nmvalera/config-loader',
+    author='Nicolas Maurice',
+    author_email='nicolas.maurice.valera@gmail.com',
+    maintainer='ConsenSys France',
+    description='A library that allows to easily load configuration settings.',
+    long_description=read('README.rst'),
     packages=find_packages(),
     install_requires=[
-        'marshmallow==3.0.0b8',
+        'marshmallow==3.0.0b11',
         'PyYAML>=3.12',
     ],
     extras_require={
@@ -51,10 +54,14 @@ setup(
     zip_safe=False,
     platforms='any',
     classifiers=[
+        'Development Status :: 5 - Production/Stable',
+        'Environment :: Web Environment',
         'Intended Audience :: Developers',
+        'License :: OSI Approved :: BSD License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
     ],
     test_suite='tests'
