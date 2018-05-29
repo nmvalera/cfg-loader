@@ -3,15 +3,10 @@ Changelog
 
 Here you can see the full list of changes between each releases of Config-Loader.
 
-Version 0.2.0
--------------
-
-Unreleased
-
 Version 0.1.0
 -------------
 
-Released on April 30th 2018
+Unreleased
 
 Features
 
