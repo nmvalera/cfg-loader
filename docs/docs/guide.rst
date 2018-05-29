@@ -1,7 +1,7 @@
-About Config-Loader
-===================
+About Cfg-Loader
+================
 
-Config loader is a library that allows to easily setup a configuration loader that makes
+Cfg-loader is a library that allows to easily setup a configuration loader that makes
 no assumption on the python framework you are using.
 It uses `marshmallow`_ to deserialize input data into a desired formatted configuration.
 It gives you full freedom to configure your own configuration schema.
@@ -19,9 +19,9 @@ Main features
 Quickstart
 ==========
 
-This page gives a good introduction to Config-Loader. If not yet install please refer to the Installation section.
+This page gives a good introduction to Cfg-Loader. If not yet install please refer to the Installation section.
 
-Config-Loader is built upon `marshmallow`_ for deserializing data.
+Cfg-Loader is built upon `marshmallow`_ for deserializing data.
 It is recommended that you have some light knowledge of `marshmallow`_ before you try
 to setup you own configuration loader.
 
@@ -33,7 +33,7 @@ Declaring a configuration loader
 
 .. code-block:: python
 
-    >>> from config_loader import ConfigSchema, BaseConfigLoader
+    >>> from cfg_loader import ConfigSchema, BaseConfigLoader
     >>> from marshmallow import fields
 
     >>> class MyConfigSchema(ConfigSchema):
@@ -45,13 +45,13 @@ Declaring a configuration loader
 
 What did we do?
 
-#. We imported the :class:`~config_loader.ConfigSchema` class, which is an enhanced version
+#. We imported the :class:`~cfg_loader.ConfigSchema` class, which is an enhanced version
    of the `marshmallow`_ base :class:`~marshmallow.Schema` class.
-   :class:`~config_loader.ConfigSchema` is 100% compatible with :class:`~marshmallow.Schema`
-#. We imported :class:`~config_loader.BaseConfigLoader` class which is
+   :class:`~cfg_loader.ConfigSchema` is 100% compatible with :class:`~marshmallow.Schema`
+#. We imported :class:`~cfg_loader.BaseConfigLoader` class which is
    the main class for instantiating a configuration loader
 #. We imported useful marshmallow resources to declare the configuration schema.
-#. We declared a configuration schema that inherits from :class:`~config_loader.ConfigSchema`.
+#. We declared a configuration schema that inherits from :class:`~cfg_loader.ConfigSchema`.
    This schema describes what the configuration should look like.
 #. We declared a configuration loader
 
@@ -87,13 +87,13 @@ The same way trying to load a configuration with a required field missing is not
     ... })
     Traceback (most recent call last):
     ...
-    config_loader.exceptions.ValidationError: {'setting2': ['Missing data for required field.']}
+    cfg_loader.exceptions.ValidationError: {'setting2': ['Missing data for required field.']}
 
 
 Specific features
 =================
 
-Class :class:`~config_loader.ConfigSchema` implements some specific features to make your life easier
+Class :class:`~cfg_loader.ConfigSchema` implements some specific features to make your life easier
 when loading a configuration from data.
 
 Environment variables substitution
@@ -101,9 +101,9 @@ Environment variables substitution
 
 When loading a configuration you may like to retrieve some external information that is not
 directly available in your input data (typically environment variables values).
-Config-Loader allows to include placeholders in the input data that are automatically substituted
+Cfg-Loader allows to include placeholders in the input data that are automatically substituted
 with data from an external mapping at configuration loading.
-Config-Loader follows the same placeholder convention as `docker compose variable substitution syntax`_.
+Cfg-Loader follows the same placeholder convention as `docker compose variable substitution syntax`_.
 
 Example
 ```````
@@ -166,7 +166,7 @@ will be replaced with environment variables as set in the current shell.
 Loading configuration from .yaml file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Config-Loader enables you to load configuration from .yaml file
+Cfg-Loader enables you to load configuration from .yaml file
 
 Example
 ```````
@@ -183,7 +183,7 @@ Loading configuration
 
 .. code-block:: python
 
-    >>> from config_loader import YamlConfigLoader
+    >>> from cfg_loader import YamlConfigLoader
 
     >>> class BaseConfigSchema(ConfigSchema):
     ...     name = fields.Str()
@@ -248,13 +248,13 @@ It is sometimes useful to have a configuration schema with nested fields for bet
 but you do not want your resulted configuration to have nested information.
 This is typically the case when you want to declare configuration by grouping settings belonging
 to a common family but in the end you want your configuration to have all the fields at the same
-level. The :class:`~config_loader.fields.UnwrapNested` field class is there for this purpose.
+level. The :class:`~cfg_loader.fields.UnwrapNested` field class is there for this purpose.
 
 Example
 ```````
 .. code-block:: python
 
-    >>> from config_loader.fields import UnwrapNested
+    >>> from cfg_loader.fields import UnwrapNested
 
     >>> class MyNestedConfigSchema(ConfigSchema):
     ...     setting1 = fields.Str()
@@ -288,5 +288,5 @@ Example
     ... }
     True
 
-The :class:`~config_loader.fields.UnwrapNested` inherits from :class:`~marshmallow.fields.Nested` and
+The :class:`~cfg_loader.fields.UnwrapNested` inherits from :class:`~marshmallow.fields.Nested` and
 can be parametrized as such.

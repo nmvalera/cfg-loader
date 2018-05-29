@@ -1,6 +1,6 @@
 """
-    config_loader.schema.base
-    ~~~~~~~~~~~~~~~~~~~~~~~~~
+    cfg_loader.schema.base
+    ~~~~~~~~~~~~~~~~~~~~~~
 
     Implement base marshmallow schema to deserialize configuration data
 
@@ -9,10 +9,11 @@
 """
 
 import marshmallow
-from config_loader.exceptions import ValidationError
-from config_loader.fields import UnwrapNested
-from config_loader.interpolator import SubstitutionTemplate, Interpolator
 from marshmallow import Schema, post_load
+
+from ..exceptions import ValidationError
+from ..fields import UnwrapNested
+from ..interpolator import SubstitutionTemplate, Interpolator
 from ..utils import add_prefix
 
 
@@ -101,7 +102,7 @@ class ConfigSchema(InterpolatingSchema, ExtraFieldsSchema, UnwrapNestedSchema):
 
     Example
 
-    >>> from config_loader import ConfigSchema, BaseConfigLoader
+    >>> from cfg_loader import ConfigSchema, BaseConfigLoader
     >>> from marshmallow import fields
 
     >>> class MyConfigSchema(ConfigSchema):

@@ -1,6 +1,6 @@
 """
-    config_loader.interpolation
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    cfg_loader.interpolation
+    ~~~~~~~~~~~~~~~~~~~~~~~~
 
     Implement functions to substitute environment variable input data
 
@@ -68,7 +68,7 @@ class SubstitutionTemplate(string.Template):
     >>> template.substitute({})
     Traceback (most recent call last):
     ...
-    config_loader.exceptions.UnsetRequiredSubstitution: err
+    cfg_loader.exceptions.UnsetRequiredSubstitution: err
 
     Examples with error raised if variable is empty or  unset (separator: ":?")
 
@@ -78,11 +78,11 @@ class SubstitutionTemplate(string.Template):
     >>> template.substitute({'VARIABLE': ''})
     Traceback (most recent call last):
     ...
-    config_loader.exceptions.UnsetRequiredSubstitution: err
+    cfg_loader.exceptions.UnsetRequiredSubstitution: err
     >>> template.substitute({})
     Traceback (most recent call last):
     ...
-    config_loader.exceptions.UnsetRequiredSubstitution: err
+    cfg_loader.exceptions.UnsetRequiredSubstitution: err
     """
 
     pattern = r"""

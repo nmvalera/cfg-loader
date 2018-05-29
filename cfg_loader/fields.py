@@ -1,6 +1,6 @@
 """
-    config_loader.fields
-    ~~~~~~~~~~~~~~~~~~~~
+    cfg_loader.fields
+    ~~~~~~~~~~~~~~~~~
 
     Implement marshmallow fields to validate against specific input data
 

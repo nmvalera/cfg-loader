@@ -9,9 +9,9 @@
 """
 
 import pytest
-from config_loader.exceptions import ValidationError
-from config_loader.fields import UnwrapNested
-from config_loader.schema import ConfigSchema
+from cfg_loader.exceptions import ValidationError
+from cfg_loader.fields import UnwrapNested
+from cfg_loader.schema import ConfigSchema
 from marshmallow import fields
 
 

@@ -1,6 +1,6 @@
 """
-    config_loader.loader
-    ~~~~~~~~~~~~~~~~~~~~
+    cfg_loader.loader
+    ~~~~~~~~~~~~~~~~~
 
     Implement the loading class
 

@@ -10,7 +10,7 @@
 
 import pytest
 
-from config_loader.utils import parse_yaml, parse_yaml_file, add_prefix
+from cfg_loader.utils import parse_yaml, parse_yaml_file, add_prefix
 
 
 def test_parse_yaml():

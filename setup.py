@@ -1,6 +1,6 @@
 """
-    Config-Loader
-    ~~~~~~~~~~~~~
+    Cfg-Loader
+    ~~~~~~~~~~
 
     Config-Loader is an empty Python project.
 
@@ -23,10 +23,10 @@ def read(file_name):
 
 
 setup(
-    name='Config-Loader',
+    name='Cfg-Loader',
     version='0.1.0-dev',
     license=read('LICENSE'),
-    url='https://github.com/nmvalera/config-loader',
+    url='https://github.com/nmvalera/cfg-loader',
     author='Nicolas Maurice',
     author_email='nicolas.maurice.valera@gmail.com',
     maintainer='ConsenSys France',

@@ -1,6 +1,6 @@
 """
-    config_loader.utils
-    ~~~~~~~~~~~~~~~~~~~
+    cfg_loader.utils
+    ~~~~~~~~~~~~~~~~
 
     Implement utilities functions
 

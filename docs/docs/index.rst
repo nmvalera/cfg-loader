@@ -1,6 +1,6 @@
-Welcome to Config-Loader
-========================
+Welcome to Cfg-Loader
+=====================
 
-Welcome to Config-Loader's documentation.
+Welcome to Cfg-Loader's documentation.
 
 .. include:: contents.rst.inc

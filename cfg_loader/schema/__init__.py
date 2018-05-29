@@ -1,6 +1,6 @@
 """
-    config_loader.schema
-    ~~~~~~~~~~~~~~~~~~~~
+    cfg_loader.schema
+    ~~~~~~~~~~~~~~~~~
 
     Implement marshmallow schema loading
 

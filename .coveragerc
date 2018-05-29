@@ -1,6 +1,6 @@
 [run]
 branch=True
-source=config_loader
+source=cfg_loader
 
 [report]
 precision=2
@@ -10,4 +10,4 @@ exclude_lines =
 
 [html]
 directory=htmlcov
-title=Config-Loader coverage Report
+title=Cfg-Loader coverage Report

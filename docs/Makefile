@@ -1,10 +1,10 @@
-# A sample Makefile for facilitating docs building on Config-Loader.
+# A sample Makefile for facilitating docs building on Cfg-Loader.
 
 # Docs directory
 
 # Sphinx info
 SPHINXOPTS=
-SPHINXPROJ=Config-Loader
+SPHINXPROJ=Cfg-Loader
 ROOTDIR=..
 SOURCEDIR=.
 DOCS_DIR=docs

@@ -9,7 +9,7 @@
 """
 
 import pytest
-from config_loader.fields import PathValidator, Path
+from cfg_loader.fields import PathValidator, Path
 from marshmallow import Schema, ValidationError
 
 

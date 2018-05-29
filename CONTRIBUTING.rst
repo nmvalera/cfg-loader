@@ -6,7 +6,7 @@ Feature Requests, Bug Reports, and Feedback. . .
 
 . . .should all be reported on the `GitHub Issue Tracker`_ .
 
-.. _`GitHub Issue Tracker`: https://github.com/nmvalera/config-loader/issues
+.. _`GitHub Issue Tracker`: https://github.com/nmvalera/cfg-loader/issues
 
 Reporting issues
 ~~~~~~~~~~~~~~~~
@@ -72,7 +72,7 @@ The project
 .. code-block:: text
 
     .
-    ├── config_loader/           # Main package source scripts (where all functional python scripts are stored)
+    ├── cfg_loader/           # Main package source scripts (where all functional python scripts are stored)
     ├── docs/                    # Docs module containing all scripts required by sphinx to build the documentation
     ├── tests/                   # Tests folder where all test modules are stores
     ├── .coveragerc              # Configuration file for coverage
@@ -211,8 +211,8 @@ The format used for a release block is be the following
     - Hotfix 1 (``#134``)
     - Hotfix 2 (``#139``)
 
-    .. _#134: https://github.com/nmvalera/config-loader/issues/134
-    .. _#139: https://github.com/nmvalera/sandbox/config-loader/issues/139
+    .. _#134: https://github.com/nmvalera/cfg-loader/issues/134
+    .. _#139: https://github.com/nmvalera/sandbox/cfg-loader/issues/139
 
 Be careful to never touch the header line as well as the release's metadata sentence.
 

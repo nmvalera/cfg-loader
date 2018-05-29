@@ -10,8 +10,8 @@
 
 import pytest
 
-from config_loader.exceptions import UnsetRequiredSubstitution, InvalidSubstitution
-from config_loader.interpolator import SubstitutionTemplate, Interpolator
+from cfg_loader.exceptions import UnsetRequiredSubstitution, InvalidSubstitution
+from cfg_loader.interpolator import SubstitutionTemplate, Interpolator
 
 
 @pytest.fixture(scope='module')

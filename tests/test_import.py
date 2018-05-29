@@ -8,7 +8,7 @@
     :license: BSD, see LICENSE for more details.
 """
 
-import config_loader
+import cfg_loader
 
 
 def _test_version(module):
@@ -20,5 +20,5 @@ def _test_all(module):
 
 
 def test_import():
-    _test_version(config_loader)
-    _test_all(config_loader)
+    _test_version(cfg_loader)
+    _test_all(cfg_loader)

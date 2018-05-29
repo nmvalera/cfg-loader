@@ -1,13 +1,13 @@
-.. image:: https://travis-ci.org/nmvalera/config-loader.svg?branch=master
-    :target: https://travis-ci.org/nmvalera/config-loader#
+.. image:: https://travis-ci.org/nmvalera/cfg-loader.svg?branch=master
+    :target: https://travis-ci.org/nmvalera/cfg-loader#
 
-.. image:: https://codecov.io/gh/nicolas-maurice/config-loader/branch/master/graph/badge.svg
-    :target: https://codecov.io/gh/nmvalera/config-loader
+.. image:: https://codecov.io/gh/nicolas-maurice/cfg-loader/branch/master/graph/badge.svg
+    :target: https://codecov.io/gh/nmvalera/cfg-loader
 
-Config-Loader
-=============
+Cfg-Loader
+==========
 
-Config loader is a library that allows to easily load configuration settings.
+Cfg-Loader is a library that allows to easily load configuration settings.
 It uses `marshmallow`_ to deserialize input data into a target format configuration data.
 
 Main features
@@ -30,7 +30,7 @@ A simple example
 
 .. code-block:: python
 
-    >>> from config_loader import ConfigSchema, BaseConfigLoader
+    >>> from cfg_loader import ConfigSchema, BaseConfigLoader
     >>> from marshmallow import fields
 
     # Declare your configuration schema
@@ -54,15 +54,15 @@ A simple example
     >>> my_config_loader.load({'setting1': '/home/folder/${FILE_PATH?:file path required}', 'setting3': 13.4})
     Traceback (most recent call last):
     ...
-    config_loader.exceptions.ValidationError: {'setting2': ['Missing data for required field.']}
+    cfg_loader.exceptions.ValidationError: {'setting2': ['Missing data for required field.']}
 
     >>> my_config_loader.load({'setting2': 12, 'setting3': 'string'})
     Traceback (most recent call last):
     ...
-    config_loader.exceptions.ValidationError: {'setting3': ['Not a valid number.']}
+    cfg_loader.exceptions.ValidationError: {'setting3': ['Not a valid number.']}
 
     # Variable substitution invalid
     >>> my_config_loader.load({'setting2': '${UNSET_VARIABLE?Variable "UNSET_VARIABLE" required}'})
     Traceback (most recent call last):
     ...
-    config_loader.exceptions.UnsetRequiredSubstitution: Variable "UNSET_VARIABLE" required
+    cfg_loader.exceptions.UnsetRequiredSubstitution: Variable "UNSET_VARIABLE" required

@@ -7,10 +7,11 @@
     :copyright: Copyright 2017 by ConsenSys France.
     :license: BSD, see :ref:`license` for more details.
 """
+
 import pytest
-from config_loader.exceptions import ConfigFileMissingError, ConfigFileNotFoundError
-from config_loader.loader import BaseConfigLoader, YamlConfigLoader
-from config_loader.schema import ConfigSchema
+from cfg_loader.exceptions import ConfigFileMissingError, ConfigFileNotFoundError
+from cfg_loader.loader import BaseConfigLoader, YamlConfigLoader
+from cfg_loader.schema import ConfigSchema
 from marshmallow import fields
 
 from .conftest import BASE_CONFIG_PATH

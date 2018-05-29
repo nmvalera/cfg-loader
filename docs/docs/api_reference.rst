@@ -4,14 +4,14 @@
 API
 ***
 
-.. module:: config_loader
+.. module:: cfg_loader
 
-This part of the documentation covers all the interfaces of Config-Loader.
+This part of the documentation covers all the interfaces of Conf-Loader.
 
 Schema
 ======
 
-.. py:currentmodule:: config_loader.schema.base
+.. py:currentmodule:: cfg_loader.schema.base
 
 .. autoclass:: InterpolatingSchema
     :members:
@@ -28,7 +28,7 @@ Schema
 Loader
 ======
 
-.. py:currentmodule:: config_loader.loader
+.. py:currentmodule:: cfg_loader.loader
 
 .. autoclass:: BaseConfigLoader
     :members:
@@ -39,7 +39,7 @@ Loader
 Interpolator
 ============
 
-.. py:currentmodule:: config_loader.interpolator
+.. py:currentmodule:: cfg_loader.interpolator
 
 .. autoclass:: Interpolator
     :members:
@@ -50,7 +50,7 @@ Interpolator
 Fields
 ======
 
-.. py:currentmodule:: config_loader.fields
+.. py:currentmodule:: cfg_loader.fields
 
 .. autoclass:: Path
     :members:
@@ -61,7 +61,7 @@ Fields
 Exceptions
 ==========
 
-.. py:currentmodule:: config_loader.exceptions
+.. py:currentmodule:: cfg_loader.exceptions
 
 .. autoclass:: ConfigLoaderError
     :show-inheritance:

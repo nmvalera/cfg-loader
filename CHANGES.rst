@@ -1,7 +1,7 @@
 Changelog
 =========
 
-Here you can see the full list of changes between each releases of Config-Loader.
+Here you can see the full list of changes between each releases of Cfg-Loader.
 
 Version 0.1.0
 -------------

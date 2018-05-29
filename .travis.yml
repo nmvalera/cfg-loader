@@ -1,4 +1,9 @@
+stages:
+  - test
+  - pypi
+
 sudo: false
+
 language: python
 
 cache: pip
@@ -20,3 +25,16 @@ install:
   - pip install tox
 
 script: tox
+
+jobs:
+  - stage: pypi
+    if: tag IS present
+    python: 3.6
+    deploy:
+      provider: pypi
+      user: nmvalera
+      on:
+        tags: true
+      distributions: sdist bdist_wheel
+      password:
+        secure:

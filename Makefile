@@ -1,4 +1,4 @@
-# A sample Makefile for facilitating development on Config-Loader.
+# A sample Makefile for facilitating development on Cfg-Loader.
 
 # Python version
 INTERPRETER=python3.6
@@ -81,11 +81,11 @@ flake8:
 test-lint: develop flake8
 
 autoflake:
-	@$(AUTOFLAKE) -ir --remove-all-unused-imports --remove-unused-variables ./config_loader
+	@$(AUTOFLAKE) -ir --remove-all-unused-imports --remove-unused-variables ./cfg_loader
 	@$(AUTOFLAKE) -ir --remove-all-unused-imports --remove-unused-variables ./tests
 
 autopep8:
-	@$(AUTOPEP8) -ir --aggressive --max-line-length=120  ./config_loader
+	@$(AUTOPEP8) -ir --aggressive --max-line-length=120  ./cfg_loader
 	@$(AUTOPEP8) -ir --aggressive --max-line-length=120  ./tests
 
 auto-lint: autoflake autopep8

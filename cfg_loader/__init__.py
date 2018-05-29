@@ -1,8 +1,8 @@
 """
-    config_loader
-    =============
+    cfg_loader
+    ~~~~~~~~~~
 
-    An empty python project
+    A library to load configuration
 
     :copyright: Copyright 2017 by ConsenSys France.
     :license: BSD, see :ref:`license` for more details.
