@@ -174,8 +174,9 @@ class Interpolator:
     >>> interpolator.interpolate('${VARIABLE} in complex string')
     'value in complex string'
 
-    >>> interpolator.interpolate_recursive({'key1': '${VARIABLE}', 'key2': ['element', '${EXTRA-default}']})
-    {'key1': 'value', 'key2': ['element', 'default']}
+    >>> result = interpolator.interpolate_recursive({'key1': '${VARIABLE}', 'key2': ['element', '${EXTRA-default}']})
+    >>> result == {'key1': 'value', 'key2': ['element', 'default']}
+    True
     """
 
     def __init__(self, substitution_mapping=None, substitution_template=SubstitutionTemplate):
