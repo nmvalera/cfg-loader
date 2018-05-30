@@ -25,3 +25,7 @@ install:
   - pip install tox
 
 script: tox
+
+jobs:
+  - stage: release
+    script: echo "releasing"
