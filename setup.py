@@ -24,7 +24,7 @@ def read(file_name):
 
 setup(
     name='Cfg-Loader',
-    version='0.1.2',
+    version='0.1.3-devd',
     license=read('LICENSE'),
     url='https://github.com/nmvalera/cfg-loader',
     author='Nicolas Maurice',
