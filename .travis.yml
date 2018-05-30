@@ -19,7 +19,6 @@ jobs:
       python: 3.6
       before_install: false
       install: false
-      script: echo "Releasing to pypi.org..."
       deploy:
         provider: pypi
         user: nmvalera
