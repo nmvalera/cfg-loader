@@ -7,7 +7,6 @@ SPHINXOPTS=
 SPHINXPROJ=Cfg-Loader
 ROOTDIR=..
 SOURCEDIR=.
-DOCS_DIR=docs
 BUILDDIR=_build
 
 # Sphinx build executable
@@ -25,4 +24,4 @@ build-html:
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
 html: clean build-html
-	@xdg-open $(BUILDDIR)/html/docs/index.html
+	@xdg-open $(BUILDDIR)/html/index.html
