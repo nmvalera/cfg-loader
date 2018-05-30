@@ -3,6 +3,13 @@ Changelog
 
 Here you can see the full list of changes between each releases of Cfg-Loader.
 
+Version 0.1.1
+-------------
+
+Released on May 30th 2018
+
+No Change
+
 Version 0.1.0
 -------------
 
