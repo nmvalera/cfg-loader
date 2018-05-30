@@ -6,7 +6,7 @@ License
 Authors
 -------
 
-.. include:: ../../AUTHORS
+.. include:: ../AUTHORS
 
 General License Definitions
 ---------------------------
@@ -26,4 +26,4 @@ documentation.
 License
 -------
 
-.. include:: ../../LICENSE
+.. include:: ../LICENSE

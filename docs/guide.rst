@@ -174,7 +174,7 @@ Example
 tests/config/config.yml
 #######################
 
-.. literalinclude:: ../../tests/config/config.yml
+.. literalinclude:: ../tests/config/config.yml
     :language: YAML
     :name: tests/config/config.yml
 

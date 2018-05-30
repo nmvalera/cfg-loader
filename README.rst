@@ -27,12 +27,12 @@ Main features
 .. _`docker compose variable substitution syntax`: https://docs.docker.com/compose/compose-file/#variable-substitution
 
 Requirements
-------------
+~~~~~~~~~~~~
 
 - Python>=3.5
 
 A simple example
-----------------
+~~~~~~~~~~~~~~~~
 
 .. code-block:: python
 
@@ -72,3 +72,8 @@ A simple example
     Traceback (most recent call last):
     ...
     cfg_loader.exceptions.UnsetRequiredSubstitution: Variable "UNSET_VARIABLE" required
+
+Documentation
+~~~~~~~~~~~~~
+
+Full documentation is available at https://cfg-loader.readthedocs.io/en/stable/.

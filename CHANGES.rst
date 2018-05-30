@@ -8,6 +8,15 @@ Version 0.2.0
 
 Unreleased
 
+Version 0.1.3
+-------------
+
+Released on May 30th 2018
+
+Docs
+
+- setup readthedocs
+
 Version 0.1.2
 -------------
 

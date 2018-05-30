@@ -46,9 +46,11 @@ setup(
             'pytest>=3',
             'tox',
             'sphinx',
+            'sphinx_rtd_theme',
         ],
         'doc': [
             'sphinx',
+            'sphinx_rtd_theme',
         ],
     },
     zip_safe=False,
