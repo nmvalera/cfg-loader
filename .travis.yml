@@ -8,26 +8,25 @@ language: python
 
 cache: pip
 
-
-
 install:
   - pip install tox
 
 script: tox
 
 jobs:
-  - stage: test
-    matrix:
-    include:
-      - os: linux
-        python: 3.5
-        env: TOXENV=py,codecov
-      - os: linux
-        python: 3.6
-        env: TOXENV=py,codecov
-      - python: 3.6
-        env: TOXENV=lint
-      - python: 3.6
-        env: TOXENV=docs
-  - stage: release
-    script: echo releasing
+  include:
+    - stage: test
+      matrix:
+      include:
+        - os: linux
+          python: 3.5
+          env: TOXENV=py,codecov
+        - os: linux
+          python: 3.6
+          env: TOXENV=py,codecov
+        - python: 3.6
+          env: TOXENV=lint
+        - python: 3.6
+          env: TOXENV=docs
+    - stage: release
+      script: echo releasing
