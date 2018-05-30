@@ -1,28 +1,22 @@
 stages:
-  - test
-  - release
-
+- test
+- release
 sudo: false
-
 language: python
-
 cache: pip
-
 install:
-  - pip install tox
-
+- pip install tox
 script: tox
-
 jobs:
   include:
-    - stage: release
-      python: 3.6
-      before_install: false
-      install: false
-      script: skip
-      deploy:
-        provider: pypi
-        user: nmvalera
-        distributions: sdist bdist_wheel
-        password:
-          secure: BAEtzBrxJWMNwKCFuw8wMd989PURe2tIoTKbfPv24W4D1bjxVTwOnSGRvdwLCviPj2heynUBGKe/JYj2Qn3fpHhPNg5lMsi2SvwLEtyvEgkkDg/6wBVVlDwds6vEJHuQzqtlABUrGF4KlSHlv+RJi/y8J9selitsK01xE7m8p/Q8mCtZwOBVBrOqjgyp+0lSUniomM6cfT6e9h5FdJb6D2OjQQdaFDSNtH/WdoKO5kxgwtpNZObyBC3citWyhHc0tpY9v5KP0WZ+Rpux3Qy60FhLBaRzDU25nEO6MHMZblelJfqJyhJW1rkhiJY/yw88iPurRFPB8p7SeEkwHW1TFjp/SrGYRKi3wBDDZRszreBkkawuPlc1x7dZqg0/Eu1WPnJDoB4mlEC9bQdaW7ie9fwn7tn61VIp0iteF3kyHfVjIZA1tOdc2eopofaJGesgpK1NQnabqVBBIfls1GfmZXTDA+B/vrKzfw2wbmu7GLTK5ZVLZgD/Dg52UL8yYWP+gngZ+MhQDOY3pS2OdYxf6+JUaZKYnHS6rhGDydlU/w0NczmvVNmngW9CzcXx0nVX6wUQbyjhtRAf0IInbq0FTiQvb1xjAEmUWwhwnqRwfhGuJA3tZV5qEcc1I7iEk90aRY7ga8bSWe9m8Co4W3t4LGRxsEJ9/3U69Gk97uSgEOs=
+  - stage: release
+    python: 3.6
+    before_install: false
+    install: false
+    script: skip
+    deploy:
+      provider: pypi
+      user: nmvalera
+      distributions: sdist bdist_wheel
+      password:
+        secure: Eaqjray/9wM7HHNylZNHVBrpGn1y4iaFwWryb6GR4Oh5wog+QCj35DQTR4NPsSfC+c06w5ilfHPkRemgSMVobT14OUbXdaVW5ttZmt4wvs2inhQrmfem95yuA4FGLktCHYVs48cGcmg1lN3tD7vbBlFVSin+SssxLSxCbVlzYXEq+F4Qq8QpmSVTjqMa3cCUYHO+8K/CiBdsECNfd3iqXcBvXhEhtZk5s36diFXkSIn02jEgCHFjQpxdvrvL5idUoI/n+htWEQuLA3s6MuyY7DfzCSWy19qhKfT4BDypT0OKCL1UPUzpz5gHR/FEWAIkPX1tHzgLivr8hroKjrnqC9rw1o74+yCLiBrnRQZeFFcwjG+Zu/jcavlb+xxaSxltaJWeG98LG3F8UpsA3+1pBgOfjhuM2zIi8lT/UDlCC8+al8ddJg692BRrbX2MLs1Ty/5o6kdW+LUY6vw72/FRC6so0alIJ7V7grVKC8PbTFagK14WjqVYQfTdTb9jyhaKSpNeGgkMNWk2D+gMc5/uCr761LFf3BIKT+9uk9jAqdVA0bHkjAwegLpcJ1y6mqAwTAGtyr9yHq7tRmvNpQhLS7avJEOcKUt5Mz1XalKQL5FNud1X+aNj2bjFpMTQItYFZECkPyKeZIb2vr5KSi4mZEoG24r3YmFAd+aza+M98Mk=
