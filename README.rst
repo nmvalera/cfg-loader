@@ -1,8 +1,14 @@
 .. image:: https://travis-ci.org/nmvalera/cfg-loader.svg?branch=master
-    :target: https://travis-ci.org/nmvalera/cfg-loader#
+    :target: https://travis-ci.org/nmvalera/cfg-loader
+    :alt: Build Status
 
-.. image:: https://codecov.io/gh/nicolas-maurice/cfg-loader/branch/master/graph/badge.svg
+.. image:: https://codecov.io/gh/nmvalera/cfg-loader/branch/master/graph/badge.svg
     :target: https://codecov.io/gh/nmvalera/cfg-loader
+    :alt: Coverage
+
+.. image:: https://readthedocs.org/projects/cfg-loader/badge/?version=stable
+    :target: https://cfg-loader.readthedocs.io/en/stable/?badge=stable
+    :alt: Documentation Status
 
 Cfg-Loader
 ==========
