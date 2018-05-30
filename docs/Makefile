@@ -20,8 +20,8 @@ clean:
 
 build-html:
 	@echo "Building docs..."
-	$(SPHINXBUILD) -b html $(SOURCEDIR) $(BUILDDIR)/html
-	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
+	$(SPHINXBUILD) -b html $(SOURCEDIR) $(BUILDDIR)
+	@echo "Build finished. The HTML pages are in $(BUILDDIR)."
 
 html: clean build-html
-	@xdg-open $(BUILDDIR)/html/index.html
+	@xdg-open $(BUILDDIR)/index.html
