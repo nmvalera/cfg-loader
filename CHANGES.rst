@@ -6,7 +6,11 @@ Here you can see the full list of changes between each releases of Cfg-Loader.
 Version 0.1.3
 -------------
 
-Unreleased
+Released on May 30th 2018
+
+Docs
+
+- setup readthedocs
 
 Version 0.1.2
 -------------
