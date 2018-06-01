@@ -11,7 +11,7 @@
 from .loader import BaseConfigLoader, YamlConfigLoader
 from .schema import ConfigSchema
 
-__version__ = '0.2.0-dev'
+__version__ = '0.2.0'
 
 __all__ = [
     'ConfigSchema',
