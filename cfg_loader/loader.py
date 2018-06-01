@@ -43,11 +43,14 @@ class YamlConfigLoader(BaseConfigLoader):
 
     :param config_file_env_var: Environment variable to read config file path from if not provided when loading
     :type config_file_env_var: str
+    :param default_config_path: Used if neither path is provided at loading nor environment variable
+    :type default_config_path: str
     """
 
-    def __init__(self, *args, config_file_env_var=DEFAULT_CONFIG_FILE_ENV_VAR, **kwargs):
+    def __init__(self, *args, config_file_env_var=DEFAULT_CONFIG_FILE_ENV_VAR, default_config_path=None, **kwargs):
         super().__init__(*args, **kwargs)
         self.config_file_env_var = config_file_env_var
+        self.default_config_path = default_config_path
 
     def check_file(self, config_file):
         """Check file validity
@@ -77,9 +80,7 @@ class YamlConfigLoader(BaseConfigLoader):
         :type config_file: str
         """
 
-        if config_file is None:
-            # If config file is not provided retrieves it from environment variable
-            config_file = os.environ.get(self.config_file_env_var)
+        config_file = config_file or os.environ.get(self.config_file_env_var) or self.default_config_path
 
         # Check config_file is valid
         self.check_file(config_file)

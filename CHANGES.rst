@@ -8,6 +8,10 @@ Version 0.2.0
 
 Unreleased
 
+Feature
+
+- implement default config path
+
 Version 0.1.3
 -------------
 
