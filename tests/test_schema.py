@@ -9,10 +9,11 @@
 """
 
 import pytest
+from marshmallow import fields, Schema
+
 from cfg_loader.exceptions import ValidationError
 from cfg_loader.fields import UnwrapNested
 from cfg_loader.schema import ConfigSchema
-from marshmallow import fields
 
 
 class NestedConfigSchemaTest(ConfigSchema):
@@ -128,22 +129,22 @@ def test_interpolating_config_schema_loading(interpolating_config_schema_loader)
     }
 
 
-class NestedUnwrapConfigSchemaTest(ConfigSchema):
+class UnwrapNestedConfigSchemaTest(ConfigSchema):
     nested = UnwrapNested(NestedConfigSchemaTest)
 
 
 class UnwrapConfigSchemaTest(ConfigSchema):
     field = fields.Str()
-    unwrap_nested = UnwrapNested(NestedUnwrapConfigSchemaTest, prefix='unwrapped_')
+    unwrap_nested = UnwrapNested(UnwrapNestedConfigSchemaTest, prefix='unwrapped_')
     regular_nested = fields.Nested(NestedConfigSchemaTest)
 
 
 @pytest.fixture(scope='module')
-def flask_config_schema_loader():
+def unwrap_config_schema_loader():
     yield UnwrapConfigSchemaTest(substitution_mapping={'VARIABLE': 'substitution', 'VARIABLE_INT': '24'})
 
 
-def test_flask_config_schema_loading(flask_config_schema_loader):
+def test_unwrap_config_schema_loading(unwrap_config_schema_loader):
     raw_config = {
         'field': 'value',
         'extra': '${VARIABLE?err}',
@@ -167,7 +168,7 @@ def test_flask_config_schema_loading(flask_config_schema_loader):
         }
     }
 
-    assert flask_config_schema_loader.load(raw_config) == {
+    assert unwrap_config_schema_loader.load(raw_config) == {
         'field': 'value',
         'extra': 'substitution',
         'unwrapped_field': 24,
@@ -184,4 +185,44 @@ def test_flask_config_schema_loading(flask_config_schema_loader):
                 'default',
             ],
         }
+    }
+
+
+class NestedDataKeyConfigSchemaTest(ConfigSchema):
+    nested = fields.Nested(NestedConfigSchemaTest, data_key='nested-key')
+
+
+def test_nested_data_key_loading():
+    schema = NestedDataKeyConfigSchemaTest()
+    raw_data = {
+        'nested-key': {
+            'field': '4',
+            'many': [],
+        },
+    }
+    loaded_data = schema.load(raw_data)
+    assert loaded_data == {
+        'nested': {
+            'field': 4,
+            'many': [],
+        },
+    }
+
+
+class UnwrapNestedDataKeyConfigSchemaTest(ConfigSchema):
+    nested = UnwrapNested(NestedConfigSchemaTest, data_key='nested-key')
+
+
+def test_unwrap_nested_data_key_loading():
+    schema = UnwrapNestedDataKeyConfigSchemaTest()
+    raw_data = {
+        'nested-key': {
+            'field': '4',
+            'many': [],
+        },
+    }
+    loaded_data = schema.load(raw_data)
+    assert loaded_data == {
+        'field': 4,
+        'many': [],
     }

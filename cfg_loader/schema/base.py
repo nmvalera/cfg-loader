@@ -70,7 +70,7 @@ class ExtraFieldsSchema(Schema):
         :param extra_data: Extra data to insert
         :type extra_data: dict
         """
-        extra_fields = set(original_data) - set(self.fields)
+        extra_fields = set(original_data) - set(value.data_key or field for field, value in self.fields.items())
         for field in extra_fields:
             data[field] = original_data[field]
 
@@ -85,7 +85,7 @@ class UnwrapNestedSchema(Schema):
         unwrap_nested = {}
         for field, value in self.fields.items():
             if isinstance(value, UnwrapNested):
-                unwrap_nested.update(add_prefix(data.pop(field), value.prefix))
+                unwrap_nested.update(add_prefix(data.pop(field, {}), value.prefix))
         data.update(unwrap_nested)
 
         return data

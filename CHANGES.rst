@@ -8,6 +8,10 @@ Version 0.2.1
 
 Unreleased
 
+Fix
+
+- Schema: update ExtraFieldsSchema handles fields declared with ``data_key``
+
 Version 0.2.0
 -------------
 
