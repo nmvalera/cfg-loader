@@ -9,7 +9,7 @@
 """
 
 import pytest
-from marshmallow import fields, Schema
+from marshmallow import fields
 
 from cfg_loader.exceptions import ValidationError
 from cfg_loader.fields import UnwrapNested
