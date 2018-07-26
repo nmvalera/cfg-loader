@@ -11,6 +11,7 @@
 """
 
 import os
+import re
 
 from setuptools import setup, find_packages
 
@@ -22,9 +23,30 @@ def read(file_name):
         return ''
 
 
+def find_version(file):
+    """Attempts to find the version number in a file.
+
+    Raises RuntimeError if not found.
+
+    :param file: File where to find version
+    :type file: str
+    """
+    version = ''
+    with open(file, 'r') as fp:
+        reg = re.compile(r'__version__ = [\'"]([^\'"]*)[\'"]')
+        for line in fp:
+            m = reg.match(line)
+            if m:
+                version = m.group(1)
+                break
+    if not version:
+        raise RuntimeError('Cannot find version information')
+    return version
+
+
 setup(
     name='Cfg-Loader',
-    version='0.2.1-dev',
+    version=find_version('cfg_loader/__init__.py'),
     license=read('LICENSE'),
     url='https://github.com/nmvalera/cfg-loader',
     author='Nicolas Maurice',
