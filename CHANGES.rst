@@ -3,6 +3,11 @@ Changelog
 
 Here you can see the full list of changes between each releases of Cfg-Loader.
 
+Version 0.2.4
+-------------
+
+Unreleased
+
 Version 0.2.3
 -------------
 
