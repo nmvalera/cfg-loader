@@ -6,7 +6,11 @@ Here you can see the full list of changes between each releases of Cfg-Loader.
 Version 0.2.3
 -------------
 
-Unreleased
+Released on August 13th 2018
+
+Chore
+
+- Update marshmallow dependencies
 
 Version 0.2.2
 -------------
